@@ -1,0 +1,105 @@
+2018-11-12 12:13:59,528 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-12 12:14:53,376 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.djira:frontend:0.0.1-SNAPSHOT @ C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\pom.xml.
+2018-11-12 12:14:55,097 [Worker-1: Importing Maven projects] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 12:15:00,559 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.djira:backend:0.0.1-SNAPSHOT @ C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\pom.xml.
+2018-11-12 12:15:00,662 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-11-12 12:15:09,011 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /frontend/src/main/java
+2018-11-12 12:15:09,012 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /frontend/src/test/java
+2018-11-12 12:15:26,591 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/main/java
+2018-11-12 12:15:26,592 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /backend/src/main/resources
+2018-11-12 12:15:26,600 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /backend/src/main/resources
+2018-11-12 12:15:26,609 [Worker-1: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/test/java
+2018-11-12 12:15:28,319 [Worker-1: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 49 sec
+2018-11-12 12:15:32,780 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 12:15:34,678 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:15:34,678 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\dist
+2018-11-12 12:15:34,683 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:15:34,683 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\src\test\resources
+2018-11-12 12:15:36,185 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 12:15:37,615 [Worker-11: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-11-12 12:15:37,897 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:15:37,912 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-12 12:15:37,952 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-12 12:15:37,970 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:15:37,971 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-11-12 12:22:07,288 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-12 12:22:15,931 [Worker-6: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 12:22:21,028 [Worker-6: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-11-12 12:22:22,409 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:22:22,417 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-12 12:22:22,451 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-12 12:22:22,462 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 12:22:22,462 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-11-12 15:10:50,305 [Worker-7: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-12 15:10:58,609 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 15:11:02,086 [Worker-12: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-11-12 15:11:03,140 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 15:11:03,149 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-12 15:11:03,182 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-12 15:11:03,188 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 15:11:03,188 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-11-12 15:37:48,153 [Worker-8: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-12 15:37:56,357 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-11-12 15:38:02,731 [Worker-2: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-11-12 15:38:04,307 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 15:38:04,317 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-12 15:38:04,395 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-12 15:38:04,406 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-12 15:38:04,406 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-04 17:10:12,301 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-12-04 17:10:18,080 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-04 17:10:18,080 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\dist
+2018-12-04 17:10:18,084 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-04 17:10:18,084 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\src\test\resources
+2018-12-04 17:10:21,492 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2018-12-04 17:10:23,230 [Worker-4: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2018-12-04 17:10:23,710 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-04 17:10:23,717 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-04 17:10:23,753 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-04 17:10:23,756 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-04 17:10:23,757 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-04 17:11:20,686 [Worker-16: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-04 17:11:46,576 [Worker-14: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-04 17:11:46,844 [Worker-14: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 11:01:18,091 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:18,099 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 11:01:18,109 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 11:01:18,112 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:18,113 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 11:01:27,633 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:27,634 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 11:01:27,638 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 11:01:27,642 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:27,643 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 11:01:47,178 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:47,180 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 11:01:47,205 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 11:01:47,209 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 11:01:47,209 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 11:01:58,814 [Worker-30: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 11:01:59,054 [Worker-30: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 12:06:32,487 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 12:06:32,490 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 12:06:32,496 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 12:06:32,500 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 12:06:32,503 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 15:02:21,373 [Worker-34: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 15:02:21,580 [Worker-34: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 16:12:15,313 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:12:15,322 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 16:12:15,339 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 16:12:15,391 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:12:15,392 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 16:12:37,756 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:12:37,757 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 16:12:37,760 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 16:12:37,764 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:12:37,765 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 16:13:01,121 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:13:01,123 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 16:13:01,126 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-12-05 16:13:01,130 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 16:13:01,130 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2018-12-05 16:13:34,656 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-05 16:13:34,947 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-06 09:30:04,683 [Worker-47: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
