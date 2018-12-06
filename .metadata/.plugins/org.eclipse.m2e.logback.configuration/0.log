@@ -103,3 +103,4 @@
 2018-12-05 16:13:34,656 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
 2018-12-05 16:13:34,947 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
 2018-12-06 09:30:04,683 [Worker-47: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2018-12-06 09:30:04,935 [Worker-47: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
