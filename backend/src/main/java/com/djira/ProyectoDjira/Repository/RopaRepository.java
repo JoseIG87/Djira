@@ -1,7 +1,6 @@
 package com.djira.ProyectoDjira.Repository;
 
 import com.djira.ProyectoDjira.Domain.Ropa;
-import com.djira.ProyectoDjira.Dto.MarcasDTO;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,9 +21,13 @@ public interface RopaRepository extends MongoRepository<Ropa, String>{
 	Page<Ropa> findByTipo(@Param("tipo") String tipo, Pageable pageable);
 	
 	@Query("{ 'tipo' : ?2, 'precio' : {$gt : ?0, $lt : ?1}, 'marca' : {$in : ?3}}")
-	List<Ropa> findByPrecioBetweenAndTipo(BigDecimal precioMin, BigDecimal precioMax, String tipo, String[] marcas, Pageable pageable);
+	List<Ropa> findByPrecioBetweenAndTipo(BigDecimal precioMin, BigDecimal precioMax, String tipo, List<String> marcas, 
+			Pageable pageable);
 	
 	@Query("{ 'tipo' : ?2, 'precio' : {$gt : ?0, $lt : ?1}, 'marca' : {$in : ?3}}")
-	List<Ropa> findByPrecioBetweenAndTipo(BigDecimal precioMin, BigDecimal precioMax, String tipo, String[] marcas);
+	List<Ropa> findByPrecioBetweenAndTipo(BigDecimal precioMin, BigDecimal precioMax, String tipo, List<String> marcas);
+	
+	@Query("{ 'nombre' : ?0,  'nombrePaginaOrigen' : ?1}")
+	Ropa findByNombreAndNombrePaginaOrigen(String nombre, String nombrePaginaOrigen);
 	
 }

@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.djira.ProyectoDjira.Domain.MarcasZapatillas;
 import com.djira.ProyectoDjira.Dto.ListaProductoDTO;
 import com.djira.ProyectoDjira.Dto.MarcasDTO;
 import com.djira.ProyectoDjira.Dto.ProductoDTO;
 import com.djira.ProyectoDjira.Service.CalzadoService;
+import com.djira.ProyectoDjira.Service.MarcasZapatillasService;
 import com.djira.ProyectoDjira.Service.common.exception.ServiceException;
 
 @RestController
@@ -31,16 +33,21 @@ public class hCalzadoController extends BaseRestController{
 	@Autowired
 	private CalzadoService servicio;
 	
-	public hCalzadoController(CalzadoService servicio) {
+	@Autowired
+	private MarcasZapatillasService marcasZapatillasService;
+	
+	public hCalzadoController(CalzadoService servicio, MarcasZapatillasService marcasZapatillasService) {
 		super();
 		this.servicio = servicio;
+		this.marcasZapatillasService = marcasZapatillasService;
 	}
 	
 	@RequestMapping(value = "/zapatillas/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE) 
 	public ResponseEntity<ListaProductoDTO> getAllZapatillasPaginado(@RequestParam("pagina") int page, @RequestParam("cantidad") int amount) throws ServiceException{
 		ResponseEntity<ListaProductoDTO> respuesta = new ResponseEntity<ListaProductoDTO>(HttpStatus.NOT_FOUND);
 		ListaProductoDTO rta = new ListaProductoDTO();
-		
+		List<String> marcas = new ArrayList<String>();
+		List<MarcasZapatillas> marcasDTO = new ArrayList<MarcasZapatillas>();
 		List<ProductoDTO> zapas = new ArrayList<ProductoDTO>();
 		zapas = servicio.getAllCalzadosHombre("zapatilla", page, amount);	
 		Integer cantidadZapas = servicio.obtenerCantidadDeProductosPorTipo("zapatilla");
@@ -49,8 +56,12 @@ public class hCalzadoController extends BaseRestController{
 		rta.setCantidadPaginas(cantidadZapas);
 		rta.setListaProductos(zapas);
 		rta.setMinPrice(listaTotal.isEmpty() ? new BigDecimal(0) : listaTotal.get(0).getPrecioProducto());
-		rta.setMaxPrice(listaTotal.isEmpty() ? new BigDecimal(0) : listaTotal.get(listaTotal.size()-1).getPrecioProducto());	
-		rta.setListaMarcas(servicio.getAllMarcasZapatillas());
+		rta.setMaxPrice(listaTotal.isEmpty() ? new BigDecimal(0) : listaTotal.get(listaTotal.size()-1).getPrecioProducto());
+		marcasDTO = servicio.getAllMarcasZapatillas();
+		for(MarcasZapatillas marca : marcasDTO) {
+			marcas.add(marca.getNombre());
+		}
+		rta.setListaMarcas(marcas);
 		
 		if(!zapas.isEmpty()) {
 			respuesta = new ResponseEntity<ListaProductoDTO>(rta, HttpStatus.OK);	
@@ -60,11 +71,15 @@ public class hCalzadoController extends BaseRestController{
 	
 	@RequestMapping(value = "/zapatillas/all", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<ListaProductoDTO> getBetweenPrice(@RequestParam("precioMin") BigDecimal precioMin, @RequestParam("precioMax") BigDecimal precioMax, 
-			@RequestParam("pagina") int page, @RequestParam("cantidad") int amount, @RequestBody List<MarcasDTO> marcas) throws ServiceException {
+			@RequestParam("pagina") int page, @RequestParam("cantidad") int amount, @RequestBody List<String> marcas) throws ServiceException {
 		ResponseEntity<ListaProductoDTO> respuesta = new ResponseEntity<ListaProductoDTO>(HttpStatus.NOT_FOUND);
 		ListaProductoDTO rta = new ListaProductoDTO();
-		
 		List<ProductoDTO> zapas = new ArrayList<ProductoDTO>();
+		
+		if(marcas.isEmpty()) {
+			marcas = marcasZapatillasService.obtenerTodasLasMarcas();
+		}
+		
 		zapas = servicio.getAllCalzadoHombreWithFilter("zapatilla", page, amount, precioMin, precioMax, marcas);
 		Integer cantidadZapas = servicio.obtenerCantidadDeProductosPorTipoConFiltros("zapatilla", precioMin, precioMax, marcas);
 		

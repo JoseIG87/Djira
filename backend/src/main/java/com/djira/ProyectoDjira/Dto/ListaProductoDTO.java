@@ -4,18 +4,16 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-import com.djira.ProyectoDjira.Domain.MarcasZapatillas;
-
 public class ListaProductoDTO implements Serializable {
 	private static final long serialVersionUID = 4666254840289438086L;
 	
 	private List<ProductoDTO> listaProductos;
-	private List<MarcasZapatillas> listaMarcas;
+	private List<String> listaMarcas;
 	private double cantidadPaginas;
 	private BigDecimal minPrice;
 	private BigDecimal maxPrice;
 	
-	public ListaProductoDTO(List<ProductoDTO> listaProductos, List<MarcasZapatillas> listaMarcas, double cantidadPaginas) {
+	public ListaProductoDTO(List<ProductoDTO> listaProductos, List<String> listaMarcas, double cantidadPaginas) {
 		super();
 		this.listaProductos = listaProductos;
 		this.listaMarcas = listaMarcas;
@@ -56,11 +54,11 @@ public class ListaProductoDTO implements Serializable {
 		this.maxPrice = maxPrice;
 	}
 
-	public List<MarcasZapatillas> getListaMarcas() {
+	public List<String> getListaMarcas() {
 		return listaMarcas;
 	}
 
-	public void setListaMarcas(List<MarcasZapatillas> listaMarcas) {
+	public void setListaMarcas(List<String> listaMarcas) {
 		this.listaMarcas = listaMarcas;
 	}
 	
