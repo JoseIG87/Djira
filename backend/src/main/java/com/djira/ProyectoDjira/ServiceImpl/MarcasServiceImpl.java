@@ -6,16 +6,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.djira.ProyectoDjira.Domain.MarcasZapatillas;
-import com.djira.ProyectoDjira.Repository.MarcasZapatillasRepository;
-import com.djira.ProyectoDjira.Service.MarcasZapatillasService;
+import com.djira.ProyectoDjira.Domain.Marcas;
+import com.djira.ProyectoDjira.Repository.MarcasRepository;
+import com.djira.ProyectoDjira.Service.MarcasService;
 import com.djira.ProyectoDjira.Service.common.exception.ServiceException;
 
 @Service
-public class MarcasZapatillasServiceImpl implements MarcasZapatillasService {
+public class MarcasServiceImpl implements MarcasService {
 	
 	@Autowired
-	private MarcasZapatillasRepository marcasZapatillasRepo;
+	private MarcasRepository marcasRepo;
 	
 	@Override
 	public String obtenerMarca(String marca) throws ServiceException {
@@ -98,6 +98,8 @@ public class MarcasZapatillasServiceImpl implements MarcasZapatillasService {
 			case "j": return "John Foos";
 			case "john": return "John Foos";
 			case "la": return "multipleResult";
+			case "l.a": return "multipleResult";
+			case "l.a.": return "multipleResult";
 			case "las": return "multipleResult";
 			case "latin": return "Latin Shoes";
 			case "le": return "multipleResult";
@@ -134,6 +136,8 @@ public class MarcasZapatillasServiceImpl implements MarcasZapatillasService {
 	public String obtenerMarcaSegunAliasSimilar(String alias) throws ServiceException {
 		switch (alias.toLowerCase()) {
 	        case "la gear":  return "LA Gear";
+	        case "l.a gear":  return "LA Gear";
+	        case "l.a. gear":  return "LA Gear";
 	        case "la sportiva":  return "La Sportiva";
 	        case "las tabas":  return "Las Tabas";
 	        case "las nornas":  return "Las Nornas";
@@ -144,13 +148,13 @@ public class MarcasZapatillasServiceImpl implements MarcasZapatillasService {
 	}
 
 	@Override
-	public List<String> obtenerTodasLasMarcas() throws ServiceException {
-		List<MarcasZapatillas> marcas = new ArrayList<MarcasZapatillas>();
+	public List<String> obtenerTodasLasMarcasPorTipo(String tipo) throws ServiceException {
+		List<Marcas> marcas = new ArrayList<Marcas>();
 		List<String> rta = new ArrayList<String>();
 		
-		marcas = marcasZapatillasRepo.findAll();
+		marcas = marcasRepo.findByTipo(tipo);
 		
-		for(MarcasZapatillas marca : marcas) {
+		for(Marcas marca : marcas) {
 			rta.add(marca.getNombre());
 		}
 		return rta;

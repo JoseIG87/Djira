@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.djira.ProyectoDjira.Domain.Ropa;
-import com.djira.ProyectoDjira.Service.MarcasZapatillasService;
+import com.djira.ProyectoDjira.Service.MarcasService;
 import com.djira.ProyectoDjira.Service.ScrapingService;
 import com.djira.ProyectoDjira.Service.common.exception.ServiceException;
 
@@ -27,7 +27,7 @@ public class ScrapingServiceImpl implements ScrapingService {
 	private static final Logger LOG = LoggerFactory.getLogger(CalzadoServiceImpl.class);
 	
 	@Autowired
-	private MarcasZapatillasService marcasZapatillasService;
+	private MarcasService marcasService;
 	
 	@Override
 	public List<Ropa> obtenerProductosDafiti(String path, String tipo) throws ServiceException {
@@ -41,18 +41,25 @@ public class ScrapingServiceImpl implements ScrapingService {
             	for (Element elem : entradas) {
             		Elements entradaNombre = elem.select("p.itm-title");
 	            	String nombre = entradaNombre.get(0).text();
-	            	if(nombre.length() > 30){
-	            		nombre = nombre.substring(0, 30)+"...";
-	            	}
 	            	nombre = toCamelCase(nombre.toLowerCase());
 	            	String marca = null;
 	            	if(tipo.equals("zapatillas")) {
 	            		if(nombre.split(" ").length <= 2) {
-		            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
 		            	}else {
-		            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[2]);
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[2]);
 	    	            	if(marca.equals("multipleResult")) {
-	    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[2]+" "+nombre.split(" ")[3]);
+	    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[2]+" "+nombre.split(" ")[3]);
+	    	            	}
+		            	}
+	            	}
+	            	if(tipo.equals("zapatos")) {
+	            		if(nombre.split(" ").length <= 2) {
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+		            	}else {
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[2]);
+	    	            	if(marca.equals("multipleResult")) {
+	    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[2]+" "+nombre.split(" ")[3]);
 	    	            	}
 		            	}
 	            	}
@@ -100,15 +107,12 @@ public class ScrapingServiceImpl implements ScrapingService {
 	        		Elements entradaNombre = elem.select("a.i");
 	        		if(entradaNombre.size() != 0) {
 	        			String nombre = entradaNombre.attr("title");
-		            	if(nombre.length() > 30){
-		            		nombre = nombre.substring(0, 30)+"...";
-		            	}
 		            	nombre = toCamelCase(nombre.toLowerCase());
 		            	String marca = null;
 		            	if(nombre != null && tipo.equals("zapatillas")) {
-		            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
 			            	if(marca.equals("multipleResult")) {
-			            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+			            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
 			            	}
 		            	}
 		            	Elements tagImg = elem.select("a.i").select("noscript img");
@@ -166,15 +170,12 @@ public class ScrapingServiceImpl implements ScrapingService {
             	for (Element elem : entradas) {
             		Element entradaNombre = elem.select("h3.product-name a").first();
   	            	String nombre = entradaNombre.attr("title");
-  	            	if(nombre.length() > 30){
-	            		nombre = nombre.substring(0, 30)+"...";
-	            	}
   	            	nombre = toCamelCase(nombre.toLowerCase());
   	            	String marca = null;
   	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
     	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
     	            	}
 	            	}
   	            	Element tagImg = elem.select("a.product-image img").first();
@@ -230,9 +231,6 @@ public class ScrapingServiceImpl implements ScrapingService {
 	        	for (Element elem : entradas) {
 	        		Element entradaNombre = elem.select("div.product-info-inner-content.clearfix a").first();
 	            	String nombre = entradaNombre.attr("data-productname");
-	            	if(nombre.length() > 30){
-	            		nombre = nombre.substring(0, 30)+"...";
-	            	}
 	            	nombre = toCamelCase(nombre.toLowerCase());
 	            	Element tagImg = elem.select("div.image.plp-image-bg").select("img").first();
 	            	String imagenTag = tagImg.toString();
@@ -294,9 +292,6 @@ public class ScrapingServiceImpl implements ScrapingService {
             			break;
             		}
 	            	String nombre = entradaNombre.attr("data-productname");
-	            	if(nombre.length() > 30){
-	            		nombre = nombre.substring(0, 30)+"...";
-	            	}
 	            	nombre = toCamelCase(nombre.toLowerCase());
 	            	Element tagImg = elem.select("div.image.plp-image-bg").select("img").first();
 	            	String imagenTag = tagImg.toString();
@@ -373,9 +368,9 @@ public class ScrapingServiceImpl implements ScrapingService {
                 	linkArr.add(link);
                 	String marca = null;
   	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
     	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
     	            	}
     	            	marcaArr.add(marca);
 	            	}
@@ -449,9 +444,9 @@ public class ScrapingServiceImpl implements ScrapingService {
                 	linkArr.add(link);
                 	String marca = null;
   	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
     	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
     	            	}
     	            	marcaArr.add(marca);
 	            	}
@@ -578,9 +573,9 @@ public class ScrapingServiceImpl implements ScrapingService {
                 	linkArr.add(link);
                 	String marca = null;
   	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
     	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
     	            	}
     	            	marcaArr.add(marca);
 	            	}
@@ -651,9 +646,9 @@ public class ScrapingServiceImpl implements ScrapingService {
                 	linkArr.add(link);
                 	String marca = null;
   	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
     	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
     	            	}
     	            	marcaArr.add(marca);
 	            	}
@@ -713,15 +708,12 @@ public class ScrapingServiceImpl implements ScrapingService {
             		Elements entradaNombre = elem.select("h5.product-name");
 	            	String nombre = entradaNombre.get(0).text();
 	            	if(nombre.toUpperCase().indexOf("CROCS") == -1) {
-	            		if(nombre.length() > 30){
-		            		nombre = nombre.substring(0, 30)+"...";
-		            	}
 		            	nombre = toCamelCase(nombre.toLowerCase());
 		            	String marca = null;
 		            	if(tipo.equals("zapatillas")) {
-		            		marca = marcasZapatillasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+		            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
 	    	            	if(marca.equals("multipleResult")) {
-	    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[2]+" "+nombre.split(" ")[3]);
+	    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[2]+" "+nombre.split(" ")[3]);
 	    	            	}
 		            	}
 		            	Elements entradaImagen = elem.select("div.featured-img.switch-image");
@@ -762,10 +754,55 @@ public class ScrapingServiceImpl implements ScrapingService {
 	}
 	
 	@Override
-	public List<Ropa> obtenerZapatillasMercadoLibre(String path, String tipo, String filter) throws ServiceException {
+	public List<Ropa> obtenerProductosRingo(String path, String tipo) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		String urlCalzado = "https://tienda.ringo.com.ar/" + path;
+		if (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div#products > div");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("h3.title > a");
+	            	String nombre = entradaNombre.attr("title");
+	            	nombre = toCamelCase(tipo) + " Ringo " + toCamelCase(nombre.toLowerCase());
+	            	Elements entradaImagen = elem.select("a.product_img_link");
+	            	Elements imagen = entradaImagen.select("img");
+	            	String img = imagen.attr("src").trim();
+	            	Elements entradaPrecio = elem.select("div.content_price");
+	            	Elements precio = entradaPrecio.select("span.price.product-price.precio-list");
+	            	String precioS = precio.get(0).text();
+	            	String[] precioArr;
+	            	String precioFinal = "0";
+	            	if(precioS.indexOf(",") != -1) {
+	            		precioArr = precioS.split(",");
+	            		if(precioArr[0].indexOf(".") != -1) {
+	            			precioFinal = precioArr[0].substring(1, 2) + precioArr[0].substring(3, precioArr[0].length());
+	            		}else {
+	            			precioFinal = precioArr[0].substring(1, precioArr[0].length());
+	            		}
+	            		precioFinal = precioFinal+"."+precioArr[1];
+	            	}
+	            	BigDecimal precioBd = new BigDecimal(precioFinal);
+	            	Element link = elem.select("h3.title > a").first();
+	            	String linkHref = link.attr("href");
+	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Ringo", null, null, null, linkHref, "ringo"));
+	            }
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosMercadoLibre(String path, String tipoSingular, String tipoPlural, String filter) throws ServiceException {
+		String uri = "";
+		switch (tipoSingular.toLowerCase()) {
+	        case "zapatilla":  uri = "https://zapatillas.mercadolibre.com.ar/";
+	        case "zapato":  uri = "https://zapatos.mercadolibre.com.ar/";
+	        case "mocasin":  uri = "https://zapatos.mercadolibre.com.ar/";
+		}
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
 		Integer contPagina = 1;
-		String urlCalzado = "https://zapatillas.mercadolibre.com.ar/" + path + contPagina.toString() + filter;
+		String urlCalzado = uri + path + contPagina.toString() + filter;
 		while (getStatusConnectionCode(urlCalzado) == 200) {
             Document document = getHtmlDocument(urlCalzado);
             Elements entradas = document.select("section.results.grid > ol > li");
@@ -773,42 +810,51 @@ public class ScrapingServiceImpl implements ScrapingService {
             	for (Element elem : entradas) {
             		Elements entradaNombre = elem.select("h2.item__title.list-view-item-title > span");
 	            	String nombre = entradaNombre.get(0).text();
-	            	if(nombre.toUpperCase().indexOf("CROCS") == -1) {
-	            		String nombreAux = toCamelCase(nombre.toLowerCase());
-	            		if(nombre.length() > 30){
-		            		nombre = nombre.substring(0, 30)+"...";
-		            	}
-		            	nombre = toCamelCase(nombre.toLowerCase());
+	            	if(nombre.toUpperCase().indexOf(tipoPlural) != -1 || nombre.toUpperCase().indexOf(tipoSingular) != -1) {
+	            		nombre = toCamelCase(nombre.toLowerCase());
 		            	String marca = null;
-		            	if(tipo.equals("zapatillas")) {
-		            		String [] marcas = nombreAux.split(" ");
-		            		for(int i=0; i < marcas.length; i++) {
-		            			marca = marcasZapatillasService.obtenerMarcaSegunAlias(marcas[i]);
-		            			if(marca.split(" ").length >= 2 || marca.equals("multipleResult")) {
-		            				if(marca.equals("multipleResult")) {
-			    	            		marca= marcasZapatillasService.obtenerMarcaSegunAliasSimilar(marcas[i]+" "+marcas[i+1]);
-			    	            	}
-		            				break;
-		            			} else {
-		            				marca = marcasZapatillasService.obtenerMarca(marcas[i]);
-		            				if(marca != null) {
-		            					break;
-		            				}
-		            			}
-		            		}
-		            		if(marca == null) {
-		            			marca = "Otro";
-		            		}
-		            	}
+		            	String [] marcas = nombre.split(" ");
+	            		for(int i=0; i < marcas.length; i++) {
+	            			marca = marcasService.obtenerMarcaSegunAlias(marcas[i]);
+	            			if(marca.split(" ").length >= 2 || marca.equals("multipleResult")) {
+	            				if(marca.equals("multipleResult")) {
+		    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(marcas[i]+" "+marcas[i+1]);
+		    	            	}
+	            				break;
+	            			} else {
+	            				marca = marcasService.obtenerMarca(marcas[i]);
+	            				if(marca != null) {
+	            					break;
+	            				}
+	            			}
+	            		}
+	            		if(marca == null || marca == "zapatilla" ) {
+	            			marca = "Otro";
+	            		}
 		            	Elements entradaImagen = elem.select("div.images-viewer");
 		            	Elements imagen = entradaImagen.select("img.lazy-load");
-		            	String img = imagen.attr("src").trim();
+		            	String img = "";
+		            	if(imagen.size() == 0) {
+		            		imagen = entradaImagen.select("img.loading");
+		            		img = imagen.attr("data-src");
+		            	} else {
+		            		img = imagen.attr("src").trim();
+		            	}
 		            	Elements entradaPrecio = elem.select("div.item__price.item__price-discount");
 		            	if(entradaPrecio.size() == 0) {
 		            		entradaPrecio = elem.select("div.item__price ");
 		            	}
-		            	Elements precio = entradaPrecio.select("span.price__fraction");
-		            	String precioS = precio.get(0).text();
+		            	Elements precioEntero = entradaPrecio.select("span.price__fraction");
+		            	Elements precioDecimal = entradaPrecio.select("span.price__decimals");
+		            	String precioEnteroS = precioEntero.get(0).text();
+		            	if(precioEnteroS.indexOf(".") != -1) {
+		            		precioEnteroS = precioEnteroS.substring(0,1) + precioEnteroS.substring(2, precioEnteroS.length());
+		            	}
+		            	String precioDecimalS = "00";
+		            	if(precioDecimal.size() != 0) {
+		            		precioDecimalS = precioDecimal.get(0).text();
+		            	}
+		            	String precioS = precioEnteroS+"."+precioDecimalS;
 		            	BigDecimal precioBd = new BigDecimal(precioS);
 		            	Element link = elem.select("div.images-viewer").first();
 		            	String linkHref = link.attr("item-url");
@@ -817,9 +863,91 @@ public class ScrapingServiceImpl implements ScrapingService {
 	            }
 	        	contPagina+=50;
 	        	LOG.info(contPagina.toString());
-	        	urlCalzado = "https://zapatillas.mercadolibre.com.ar/" + path + contPagina.toString() + filter;
+	        	urlCalzado = uri + path + contPagina.toString() + filter;
             }else{
             	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosBorsalino(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://calzadosborsalino.com/" + path + contPagina.toString();
+        while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.products.row row-small.large-columns-3.medium-columns-3.small-columns-2");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("p.itm-title");
+	            	String nombre = entradaNombre.get(0).text();
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	Elements entradaImagen = elem.select("div.lazyImage [data-src]");
+	            	String imagenTag = entradaImagen.get(0).toString();
+	            	int indx = imagenTag.indexOf("data-src");
+	            	String imgTmp = imagenTag.substring(indx+10, imagenTag.length());
+	            	int indx2 = imgTmp.indexOf(" ");
+	            	String img = imgTmp.substring(0, indx2-1);
+	            	Elements entradaPrecio = elem.select("p.itm-priceBox [class=itm-price special]");
+	            	if(entradaPrecio.size() == 0){
+	            		entradaPrecio = elem.select("p.itm-priceBox [class=itm-price]");
+	            	}
+	            	String tmp = entradaPrecio.get(0).text();
+	            	int dotindx = tmp.indexOf(",");
+	            	String enteros = tmp.substring(2,dotindx);
+	            	String decimales = tmp.substring(dotindx+1, tmp.length());
+	            	String precioParse = enteros+"."+decimales;
+	            	BigDecimal precio = new BigDecimal(precioParse);
+	            	Document doc = Jsoup.parse(elem.toString());
+	            	Element link = doc.select("a").first();
+	            	String linkHref = link.attr("href");
+	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Borsalino", null, null, null, linkHref, "borsalino"));
+            		
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://calzadosborsalino.com/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	
+	/*
+	 * ***********************************
+	 *  SOLO HOMBRES
+	 * ***********************************
+	 */
+	
+	@Override
+	public List<Ropa> obtenerProductosValkymia(String path, String tipo) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		String urlCalzado = "https://valkymia.com/" + path;
+		if (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.category-products > ul > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("h2.product-name > a");
+	            	String nombre = entradaNombre.attr("title");
+	            	nombre = toCamelCase(tipo) + " Valkymia " + toCamelCase(nombre.toLowerCase());
+	            	Elements entradaImagen = elem.select("a.product-image");
+	            	Elements imagen = entradaImagen.select("img");
+	            	String img = imagen.attr("src").trim();
+	            	Elements entradaPrecio = elem.select("div.price-box > p.special-price");
+	            	if(entradaPrecio.size() == 0) {
+	            		entradaPrecio = elem.select("div.price-box > p.old-price");
+	            	}
+	            	Elements precio = entradaPrecio.select("span.price");
+	            	String precioS = precio.get(0).text();
+	            	BigDecimal precioBd = new BigDecimal(precioS.substring(1, precioS.length()));
+	            	Element link = elem.select("h2.product-name > a").first();
+	            	String linkHref = link.attr("href");
+	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Valkymia", null, null, null, linkHref, "valkymia"));
+	            }
             }
         }
         return ropaGuardar;

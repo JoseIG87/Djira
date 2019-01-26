@@ -29,6 +29,12 @@ public interface ScrapingService {
 	
 	List<Ropa> obtenerProductosLocalsOnly(String path, String tipo) throws ServiceException;
 	
-	List<Ropa> obtenerZapatillasMercadoLibre(String path, String tipo, String filter) throws ServiceException;
+	List<Ropa> obtenerProductosMercadoLibre(String path, String tipoSingular, String tipoPlural, String filter) throws ServiceException;
+	
+	List<Ropa> obtenerProductosValkymia(String path, String tipo) throws ServiceException;
+	
+	List<Ropa> obtenerProductosRingo(String path, String tipo) throws ServiceException;
+	
+	List<Ropa> obtenerProductosBorsalino(String path) throws ServiceException;
 
 }

@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.djira.ProyectoDjira.Domain.MarcasZapatillas;
 import com.djira.ProyectoDjira.Dto.ListaProductoDTO;
 import com.djira.ProyectoDjira.Dto.MarcasDTO;
 import com.djira.ProyectoDjira.Dto.ProductoDTO;
 import com.djira.ProyectoDjira.Service.CalzadoService;
-import com.djira.ProyectoDjira.Service.MarcasZapatillasService;
+import com.djira.ProyectoDjira.Service.MarcasService;
 import com.djira.ProyectoDjira.Service.common.exception.ServiceException;
 
 @RestController
@@ -34,9 +33,9 @@ public class hCalzadoController extends BaseRestController{
 	private CalzadoService servicio;
 	
 	@Autowired
-	private MarcasZapatillasService marcasZapatillasService;
+	private MarcasService marcasZapatillasService;
 	
-	public hCalzadoController(CalzadoService servicio, MarcasZapatillasService marcasZapatillasService) {
+	public hCalzadoController(CalzadoService servicio, MarcasService marcasZapatillasService) {
 		super();
 		this.servicio = servicio;
 		this.marcasZapatillasService = marcasZapatillasService;
@@ -47,7 +46,7 @@ public class hCalzadoController extends BaseRestController{
 		ResponseEntity<ListaProductoDTO> respuesta = new ResponseEntity<ListaProductoDTO>(HttpStatus.NOT_FOUND);
 		ListaProductoDTO rta = new ListaProductoDTO();
 		List<String> marcas = new ArrayList<String>();
-		List<MarcasZapatillas> marcasDTO = new ArrayList<MarcasZapatillas>();
+		List<MarcasDTO> marcasDTO = new ArrayList<MarcasDTO>();
 		List<ProductoDTO> zapas = new ArrayList<ProductoDTO>();
 		zapas = servicio.getAllCalzadosHombre("zapatilla", page, amount);	
 		Integer cantidadZapas = servicio.obtenerCantidadDeProductosPorTipo("zapatilla");
@@ -58,8 +57,8 @@ public class hCalzadoController extends BaseRestController{
 		rta.setMinPrice(listaTotal.isEmpty() ? new BigDecimal(0) : listaTotal.get(0).getPrecioProducto());
 		rta.setMaxPrice(listaTotal.isEmpty() ? new BigDecimal(0) : listaTotal.get(listaTotal.size()-1).getPrecioProducto());
 		marcasDTO = servicio.getAllMarcasZapatillas();
-		for(MarcasZapatillas marca : marcasDTO) {
-			marcas.add(marca.getNombre());
+		for(MarcasDTO marca : marcasDTO) {
+			marcas.add(marca.getName());
 		}
 		rta.setListaMarcas(marcas);
 		
@@ -77,7 +76,7 @@ public class hCalzadoController extends BaseRestController{
 		List<ProductoDTO> zapas = new ArrayList<ProductoDTO>();
 		
 		if(marcas.isEmpty()) {
-			marcas = marcasZapatillasService.obtenerTodasLasMarcas();
+			marcas = marcasZapatillasService.obtenerTodasLasMarcasPorTipo("zapatilla");
 		}
 		
 		zapas = servicio.getAllCalzadoHombreWithFilter("zapatilla", page, amount, precioMin, precioMax, marcas);

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.djira.ProyectoDjira.Service.common.exception.ServiceException;
 
-public interface MarcasZapatillasService {
+public interface MarcasService {
 	
 	String obtenerMarcaSegunAlias (String alias) throws ServiceException;
 	
@@ -12,6 +12,6 @@ public interface MarcasZapatillasService {
 	
 	String obtenerMarca (String marca) throws ServiceException;
 	
-	List<String> obtenerTodasLasMarcas () throws ServiceException;
+	List<String> obtenerTodasLasMarcasPorTipo(String tipo) throws ServiceException;
 
 }

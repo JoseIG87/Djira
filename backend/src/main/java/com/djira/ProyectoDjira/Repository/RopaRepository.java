@@ -28,6 +28,6 @@ public interface RopaRepository extends MongoRepository<Ropa, String>{
 	List<Ropa> findByPrecioBetweenAndTipo(BigDecimal precioMin, BigDecimal precioMax, String tipo, List<String> marcas);
 	
 	@Query("{ 'nombre' : ?0,  'nombrePaginaOrigen' : ?1}")
-	Ropa findByNombreAndNombrePaginaOrigen(String nombre, String nombrePaginaOrigen);
+	List<Ropa> findByNombreAndNombrePaginaOrigen(String nombre, String nombrePaginaOrigen);
 	
 }

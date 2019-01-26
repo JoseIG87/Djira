@@ -12,10 +12,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.djira.ProyectoDjira.Domain.MarcasZapatillas;
+import com.djira.ProyectoDjira.Domain.Marcas;
 import com.djira.ProyectoDjira.Domain.Ropa;
+import com.djira.ProyectoDjira.Dto.MarcasDTO;
 import com.djira.ProyectoDjira.Dto.ProductoDTO;
-import com.djira.ProyectoDjira.Repository.MarcasZapatillasRepository;
+import com.djira.ProyectoDjira.Repository.MarcasRepository;
 import com.djira.ProyectoDjira.Repository.RopaRepository;
 import com.djira.ProyectoDjira.Service.CalzadoService;
 import com.djira.ProyectoDjira.Service.ScrapingService;
@@ -27,7 +28,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 	private static final Logger LOG = LoggerFactory.getLogger(CalzadoServiceImpl.class);
 	
 	@Autowired
-	private MarcasZapatillasRepository marcasZapatillasRepo;
+	private MarcasRepository marcasRepo;
 	
 	@Autowired
 	private ScrapingService scrapingService;
@@ -113,11 +114,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -131,11 +132,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -147,11 +148,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -163,11 +164,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -179,11 +180,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -195,11 +196,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -211,11 +212,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -227,11 +228,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -243,11 +244,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -259,11 +260,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -275,31 +276,64 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
 		LOG.info("Finaliza busqueda en Localsonly, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerZapatillasMercadoLibre("urbanas/hombre/_Desde_", "zapatillas", "_ItemTypeID_N_Tienda_all"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("urbanas/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("skate/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("botitas/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("nauticas/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Localsonly, total de productos: " + calzadoEditar.size());
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosValkymia("calzados.html", "zapatillas"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Valkymia, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/urbanos/zapatillas", "zapatillas"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
@@ -323,11 +357,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -346,11 +380,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -365,11 +399,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -381,11 +415,11 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
@@ -397,31 +431,47 @@ public class CalzadoServiceImpl implements CalzadoService {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
 		LOG.info("Finaliza busqueda en Adidas, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosDexter("calzados/zapatillas/Hombre/Zapatillas/Moda?PS=12&map=c,c,specificationFilter_11,specificationFilter_19,specificationFilter_15&O=OrderByTopSaleDESC#", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("running/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("basquet/hombre/_Desde_","zapatilla", "zapatillas", "_ItemTypeID_N_Tienda_all"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
 			zapa.setGenero("hombre");
-			if(marcasZapatillasRepo.findByNombre(zapa.getMarca()) == null) {
-        		MarcasZapatillas marcaZapa = new MarcasZapatillas(zapa.getMarca());
-				marcasZapatillasRepo.save(marcaZapa);
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
         	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()) == null) {
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Dexter, total de productos: " + calzadoEditar.size());
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/active/man", "zapatillas"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("deportiva");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
@@ -429,9 +479,142 @@ public class CalzadoServiceImpl implements CalzadoService {
 	
 	}
 	
+	/**
+	 * Metodo para guardar en bbdd todos los zapatos masculinos
+	 * @return
+	 * @throws ServiceException
+	 */
 	@Override
-	public List<MarcasZapatillas> getAllMarcasZapatillas() throws ServiceException {
-		return this.marcasZapatillasRepo.findAll();
+	public void cargarZapatosEnCloud() throws ServiceException {
+		LOG.info("Inicia búsqueda de zapatos masculinos");
+		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
+		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/zapatos/?page=", "zapatos"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dafiti, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/urbanos/zapatos", "zapatos"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("hombre/_Desde_","zapato", "zapatos", "_ItemTypeID_N_Tienda_all"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		
+		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
+		ropaRepo.saveAll(calzadoGuardar);
+		LOG.info("Finaliza busqueda de zapatos masculinos, total de productos: " + calzadoGuardar.size());
+	
+	}
+	
+	/**
+	 * Metodo para guardar en bbdd todos los zapatos masculinos
+	 * @return
+	 * @throws ServiceException
+	 */
+	@Override
+	public void cargarMocasinesEnCloud() throws ServiceException {
+		LOG.info("Inicia búsqueda de mocasines");
+		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
+		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/mocasines-masculino/?page=", "mocasines"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dafiti, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/formal", "mocasines"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/nauticos", "mocasines"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/casual", "mocasines"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosRingo("t/categorias/flex", "mocasines"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosMercadoLibre("hombre/_Desde_","mocasin", "mocasines", "_ItemTypeID_N_Tienda_all"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		
+		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
+		ropaRepo.saveAll(calzadoGuardar);
+		LOG.info("Finaliza busqueda de mocasines, total de productos: " + calzadoGuardar.size());
+	
+	}
+	
+	@Override
+	public List<MarcasDTO> getAllMarcasZapatillas() throws ServiceException {
+		
+		List<Marcas> marcasModel = this.marcasRepo.findByTipo("zapatilla");
+		List<MarcasDTO> marcas = new ArrayList<MarcasDTO>();
+		
+		for(Marcas marca : marcasModel) {
+			MarcasDTO marcaDTO = new MarcasDTO();
+			marcaDTO.setName(marca.getNombre());
+			marcaDTO.setTipo(marca.getTipo());
+		}
+		
+		return marcas;
 	}
 
 }

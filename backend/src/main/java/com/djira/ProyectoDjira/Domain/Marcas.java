@@ -5,8 +5,8 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "marcas_zapatillas")
-public class MarcasZapatillas implements Serializable {
+@Document(collection = "marcas")
+public class Marcas implements Serializable {
 	private static final long serialVersionUID = 498830613705738074L;
 	
 	@Id
@@ -14,7 +14,9 @@ public class MarcasZapatillas implements Serializable {
 	
 	private String nombre;
 	
-	public MarcasZapatillas() {
+	private String tipo;
+	
+	public Marcas() {
 		super();
 	}
 	
@@ -24,10 +26,11 @@ public class MarcasZapatillas implements Serializable {
 	 * @param nombre
 	 * @param alias
 	 */
-	public MarcasZapatillas(String id, String nombre) {
+	public Marcas(String id, String nombre, String tipo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.tipo = tipo;
 	}
 	
 	/**
@@ -35,9 +38,10 @@ public class MarcasZapatillas implements Serializable {
 	 * @param id
 	 * @param nombre
 	 */
-	public MarcasZapatillas(String nombre) {
+	public Marcas(String nombre, String tipo) {
 		super();
 		this.nombre = nombre;
+		this.tipo = tipo;
 	}
 
 	public String getId() {
@@ -56,11 +60,19 @@ public class MarcasZapatillas implements Serializable {
 		this.nombre = nombre;
 	}
 	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
     public String toString() {
         return String.format(
-                "MarcasZapatillas[id=%s, nombre='%s']",
-                id, nombre);
+                "MarcasZapatillas[id=%s, nombre='%s', tipo='%s']",
+                id, nombre, tipo);
     }
 	
 }

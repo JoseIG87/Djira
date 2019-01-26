@@ -4476,3 +4476,640 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact nekohtml:xerc
 2019-01-22 00:32:27,338 [Worker-150: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
 2019-01-22 00:42:42,659 [Worker-143: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
 2019-01-22 00:42:42,851 [Worker-143: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 19:29:05,449 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-01-23 19:29:36,506 [Worker-16: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-01-23 19:29:41,307 [Worker-16: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2019-01-23 19:29:44,810 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:29:44,818 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:29:44,851 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:29:44,875 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:29:44,876 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 19:45:27,246 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:45:27,255 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:45:27,275 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:45:27,280 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:45:27,280 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 19:47:38,829 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:47:38,831 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:47:38,837 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:47:38,845 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:47:38,845 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 19:49:54,042 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:49:54,046 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:49:54,111 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:49:54,116 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:49:54,117 [Worker-22: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 19:51:45,490 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:51:45,492 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:51:45,498 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:51:45,504 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:51:45,504 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 19:52:16,961 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:52:16,963 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:52:16,967 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 19:52:16,973 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 19:52:16,974 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:05:06,430 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:05:06,433 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:05:06,439 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:05:06,447 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:05:06,447 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:07:33,127 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:07:33,130 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:07:33,135 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:07:33,144 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:07:33,145 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:15:04,128 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:15:04,131 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:15:04,136 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:15:04,147 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:15:04,147 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:15:29,946 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:15:29,948 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:15:29,953 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:15:29,956 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:15:29,956 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:18:21,435 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:18:21,437 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:18:21,442 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:18:21,448 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:18:21,448 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:19:51,201 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:19:51,203 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:19:51,209 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:19:51,215 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:19:51,216 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:20:02,619 [Worker-30: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:20:03,045 [Worker-30: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:26:24,929 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:26:24,932 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:26:24,938 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:26:24,942 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:26:24,942 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:26:32,540 [Worker-28: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:26:32,804 [Worker-28: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:28:27,405 [Worker-35: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:28:27,696 [Worker-35: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:29:49,415 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:29:49,623 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:32:04,211 [Worker-36: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:32:04,424 [Worker-36: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:39:00,041 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:39:00,339 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:44:07,254 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:44:07,257 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:44:07,264 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:44:07,269 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:44:07,270 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:44:17,089 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:44:17,366 [Worker-33: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:45:54,271 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:45:54,274 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:45:54,279 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 20:45:54,284 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 20:45:54,284 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 20:45:58,859 [Worker-41: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:45:59,175 [Worker-41: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:47:43,188 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 20:47:43,470 [Worker-42: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:00:53,094 [Worker-45: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:00:53,309 [Worker-45: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:20:40,630 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:20:40,633 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:20:40,638 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:20:40,643 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:20:40,644 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:25:56,184 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:25:56,187 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:25:56,192 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:25:56,205 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:25:56,205 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:27:03,134 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:27:03,136 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:27:03,141 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:27:03,145 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:27:03,146 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:27:11,258 [Worker-54: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:27:11,503 [Worker-54: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:38:36,430 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:38:36,433 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:38:36,439 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:38:36,443 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:38:36,443 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:38:46,513 [Worker-58: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:38:46,750 [Worker-58: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:42:31,766 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:42:31,768 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:42:31,773 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:42:31,776 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:42:31,776 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:42:36,987 [Worker-58: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:42:37,225 [Worker-58: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:44:12,255 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:44:12,258 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:44:12,265 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:44:12,270 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:44:12,270 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:44:22,489 [Worker-65: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:44:22,719 [Worker-65: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:45:50,199 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:45:50,201 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:45:50,206 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:45:50,209 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:45:50,209 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:45:52,500 [Worker-54: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:45:52,759 [Worker-54: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:48:49,162 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:48:49,165 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:48:49,171 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:48:49,179 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:48:49,179 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:48:53,844 [Worker-64: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:48:54,077 [Worker-64: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:50:04,970 [Worker-67: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:50:05,227 [Worker-67: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:54:24,533 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:54:24,535 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:54:24,540 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:54:24,545 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:54:24,546 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:54:31,082 [Worker-59: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:54:31,291 [Worker-59: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:57:45,276 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:57:45,278 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:57:45,283 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 21:57:45,287 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 21:57:45,287 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 21:57:50,911 [Worker-67: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 21:57:51,159 [Worker-67: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-23 22:03:27,259 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:27,261 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:27,267 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:27,271 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:27,272 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 22:03:29,235 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:29,237 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:29,242 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:29,246 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:29,246 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-23 22:03:37,899 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:37,900 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:37,905 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-23 22:03:37,909 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-23 22:03:37,909 [Worker-76: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 09:42:39,772 [Worker-18: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-01-25 09:43:04,195 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-01-25 09:43:13,941 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:43:13,949 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 09:43:13,963 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:43:13,963 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\frontend\src\test\resources
+2019-01-25 09:43:23,480 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.crashub:crash.shell:jar:1.3.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-01-25 09:43:26,269 [Worker-12: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier  to /frontend/target/classes
+2019-01-25 09:43:27,572 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:43:27,573 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 09:43:27,679 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 09:43:27,805 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:43:27,805 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 09:54:52,615 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:54:52,625 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 09:54:52,631 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 09:54:52,636 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 09:54:52,636 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:33:25,520 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:33:25,524 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:33:25,529 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:33:25,534 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:33:25,534 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:34:27,067 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:34:27,068 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:34:27,076 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:34:27,080 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:34:27,080 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:34:53,026 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:34:53,028 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:34:53,047 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:34:53,052 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:34:53,052 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:34:57,250 [Worker-47: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 11:34:57,469 [Worker-47: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 11:36:32,758 [Worker-40: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 11:36:33,089 [Worker-40: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 11:53:31,474 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:53:31,476 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:53:31,483 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:53:31,489 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:53:31,489 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:55:52,045 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:55:52,047 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:55:52,050 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 11:55:52,056 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 11:55:52,056 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 11:55:57,745 [Worker-52: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 11:55:57,967 [Worker-52: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:24:51,797 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:24:51,800 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:24:51,804 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:24:51,808 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:24:51,808 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:26:37,984 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:26:37,988 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:26:37,997 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:26:38,003 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:26:38,003 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:31:22,721 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:31:22,723 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:31:22,728 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:31:22,734 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:31:22,734 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:31:37,417 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:31:37,419 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:31:37,423 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:31:37,427 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:31:37,427 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:32:21,441 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:32:21,442 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:32:21,447 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:32:21,451 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:32:21,451 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:33:12,748 [Worker-63: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:33:12,957 [Worker-63: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:34:49,799 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:34:49,801 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:34:49,806 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:34:49,809 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:34:49,809 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:34:54,175 [Worker-63: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:34:54,391 [Worker-63: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:43:41,950 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:43:41,953 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:43:41,962 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:43:41,966 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:43:41,966 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 12:43:49,732 [Worker-62: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:43:50,102 [Worker-62: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 12:46:35,840 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:46:35,842 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:46:35,846 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 12:46:35,856 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 12:46:35,856 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 13:35:00,438 [Worker-86: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:35:00,717 [Worker-86: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:41:40,824 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:41:40,827 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:41:40,831 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:41:40,836 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:41:40,836 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 13:41:52,517 [Worker-88: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:41:52,746 [Worker-88: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:48:29,292 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:48:29,296 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:48:29,300 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:48:29,304 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:48:29,305 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 13:48:59,739 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:48:59,741 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:48:59,745 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 13:48:59,749 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 13:48:59,750 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 13:49:05,841 [Worker-98: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:49:06,047 [Worker-98: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:49:18,433 [Worker-97: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 13:49:18,590 [Worker-97: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 14:08:07,346 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:08:07,349 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:08:07,354 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:08:07,357 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:08:07,358 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:16:12,467 [Worker-106: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:16:12,470 [Worker-106: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:16:12,474 [Worker-106: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:16:12,478 [Worker-106: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:16:12,479 [Worker-106: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:16:16,874 [Worker-110: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:16:16,875 [Worker-110: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:16:16,879 [Worker-110: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:16:16,884 [Worker-110: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:16:16,884 [Worker-110: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:21:30,048 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:21:30,051 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:21:30,055 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:21:30,059 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:21:30,059 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:21:46,823 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:21:46,830 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:21:46,835 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:21:46,839 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:21:46,839 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:22:11,026 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:22:11,033 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:22:11,037 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:22:11,041 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:22:11,042 [Worker-112: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:22:51,479 [Worker-111: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:22:51,481 [Worker-111: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:22:51,486 [Worker-111: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:22:51,490 [Worker-111: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:22:51,490 [Worker-111: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:32:53,570 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:32:53,573 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:32:53,578 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:32:53,586 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:32:53,586 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:34:55,728 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:34:55,730 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:34:55,735 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:34:55,741 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:34:55,741 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:35:28,490 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:35:28,493 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:35:28,497 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:35:28,501 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:35:28,501 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:37:26,427 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:26,429 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:26,433 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:26,436 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:26,437 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:37:43,628 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:43,629 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:43,632 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:43,635 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:43,635 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:37:56,274 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:56,276 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:56,280 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:37:56,284 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:37:56,285 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:38:25,654 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:38:25,657 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:38:25,660 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:38:25,664 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:38:25,664 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:39:30,674 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:39:30,676 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:39:30,680 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:39:30,683 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:39:30,684 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:40:43,241 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:40:43,244 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:40:43,249 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:40:43,257 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:40:43,257 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:41:01,313 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:41:01,315 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:41:01,319 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:41:01,324 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:41:01,325 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:44:25,362 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:44:25,364 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:44:25,369 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:44:25,400 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:44:25,400 [Worker-121: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:46:34,369 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:46:34,372 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:46:34,378 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:46:34,382 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:46:34,382 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:47:10,801 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:10,803 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:10,807 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:10,811 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:10,811 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:47:14,591 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:14,593 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:14,597 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:14,604 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:14,604 [Worker-103: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:47:31,123 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:31,126 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:31,131 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:31,135 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:31,135 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:47:44,332 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:44,334 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:44,339 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:47:44,342 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:47:44,343 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:48:34,513 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:48:34,516 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:48:34,520 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:48:34,534 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:48:34,534 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:48:45,741 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:48:45,742 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:48:45,746 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:48:45,749 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:48:45,750 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:52:18,673 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:52:18,677 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:52:18,682 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:52:18,685 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:52:18,685 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:53:11,965 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:11,967 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:11,974 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:11,978 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:11,978 [Worker-124: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:53:25,067 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:25,068 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:25,075 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:25,079 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:25,079 [Worker-125: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:53:38,276 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:38,278 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:38,282 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:38,286 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:38,286 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:53:43,637 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:43,639 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:43,644 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:53:43,647 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:53:43,647 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:54:45,051 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:54:45,053 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:54:45,057 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:54:45,061 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:54:45,061 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 14:59:54,816 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:59:54,819 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:59:54,823 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 14:59:54,827 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 14:59:54,827 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:01:38,604 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:38,606 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:38,610 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:38,615 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:38,615 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:01:41,216 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:41,218 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:41,222 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:41,226 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:41,226 [Worker-118: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:01:53,512 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:53,515 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:53,519 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:01:53,521 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:01:53,521 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:02:51,151 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:02:51,153 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:02:51,156 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:02:51,160 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:02:51,160 [Worker-122: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:03:31,061 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:03:31,064 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:03:31,068 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:03:31,072 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:03:31,073 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:05:15,896 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:05:15,899 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:05:15,904 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:05:15,907 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:05:15,908 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:06:22,075 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:06:22,078 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:06:22,082 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:06:22,085 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:06:22,086 [Worker-130: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:17:41,306 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:17:41,308 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:17:41,313 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:17:41,317 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:17:41,317 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:17:48,476 [Worker-134: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:17:48,478 [Worker-134: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:17:48,483 [Worker-134: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:17:48,487 [Worker-134: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:17:48,487 [Worker-134: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:32:42,444 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:32:42,447 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:32:42,452 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:32:42,457 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:32:42,457 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:36:39,777 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:36:39,780 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:36:39,784 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:36:39,791 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:36:39,791 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:41:55,110 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:41:55,112 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:41:55,116 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:41:55,119 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:41:55,119 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:43:13,061 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:43:13,064 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:43:13,068 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:43:13,072 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:43:13,072 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:43:32,885 [Worker-142: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:43:32,890 [Worker-142: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:43:32,894 [Worker-142: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:43:32,900 [Worker-142: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:43:32,900 [Worker-142: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:43:43,682 [Worker-139: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:43:43,974 [Worker-139: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:47:20,579 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:47:20,581 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:47:20,584 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:47:20,586 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:47:20,587 [Worker-135: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:47:28,124 [Worker-135: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:47:28,422 [Worker-135: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:51:11,106 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:51:11,109 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:51:11,113 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:51:11,117 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:51:11,117 [Worker-140: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:51:15,176 [Worker-148: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:51:15,421 [Worker-148: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 15:59:37,805 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:59:37,807 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:59:37,812 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:59:37,822 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:59:37,823 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 15:59:56,594 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:59:56,596 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:59:56,599 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 15:59:56,603 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 15:59:56,603 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:00:17,478 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:00:17,480 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:00:17,484 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:00:17,488 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:00:17,488 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:00:29,167 [Worker-148: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 16:00:29,421 [Worker-148: Launching ProyectoDjiraApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/frontend: com.djira:frontend:0.0.1-SNAPSHOT with classifier null to /frontend/target/classes
+2019-01-25 16:11:54,853 [Worker-153: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:11:54,855 [Worker-153: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:11:54,860 [Worker-153: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:11:54,863 [Worker-153: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:11:54,863 [Worker-153: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:13:55,295 [Worker-158: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:13:55,297 [Worker-158: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:13:55,301 [Worker-158: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:13:55,304 [Worker-158: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:13:55,305 [Worker-158: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:14:06,140 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:14:06,142 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:14:06,146 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:14:06,150 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:14:06,150 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:14:43,927 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:14:43,929 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:14:43,933 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:14:43,938 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:14:43,938 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:16:05,973 [Worker-157: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:16:05,976 [Worker-157: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:16:05,982 [Worker-157: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:16:05,986 [Worker-157: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:16:05,986 [Worker-157: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:16:17,255 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:16:17,259 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:16:17,263 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:16:17,268 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:16:17,270 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:31:19,204 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:31:19,207 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:31:19,210 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:31:19,214 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:31:19,214 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:32:03,519 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:32:03,521 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:32:03,524 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:32:03,527 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:32:03,528 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:33:40,306 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:33:40,308 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:33:40,312 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:33:40,316 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:33:40,316 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:35:33,975 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:35:33,977 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:35:33,981 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:35:33,984 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:35:33,985 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:37:29,598 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:37:29,600 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:37:29,602 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:37:29,605 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:37:29,605 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:37:53,356 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:37:53,357 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:37:53,361 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:37:53,364 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:37:53,364 [Worker-165: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:40:12,562 [Worker-167: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:40:12,564 [Worker-167: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:40:12,567 [Worker-167: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:40:12,570 [Worker-167: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:40:12,571 [Worker-167: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:49:42,506 [Worker-171: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:49:42,508 [Worker-171: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:49:42,513 [Worker-171: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:49:42,521 [Worker-171: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:49:42,521 [Worker-171: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
+2019-01-25 16:50:56,539 [Worker-169: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:50:56,541 [Worker-169: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:50:56,543 [Worker-169: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-01-25 16:50:56,546 [Worker-169: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-25 16:50:56,546 [Worker-169: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jose.prieto\Documents\workspacePersonal\Proyecto-Djira\backend\src\test\resources
