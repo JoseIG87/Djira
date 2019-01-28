@@ -547,155 +547,6 @@ public class ScrapingServiceImpl implements ScrapingService {
 	}
 	
 	@Override
-	public List<Ropa> obtenerProductosDexter(String path, String tipo) throws ServiceException {
-		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
-		Integer contPagina = 1;
-		String urlCalzado = "https://www.dexter.com.ar/" + path + contPagina.toString();
-		Ropa ropa = null;
-		while (getStatusConnectionCode(urlCalzado) == 200) {
-        	Document document = getHtmlDocument(urlCalzado);
-        	Elements entradas = document.select("div.prateleira.vitrine.n4colunas > ul");
-        	for(Element el : entradas) {
-        		List<String> nombresArr = new ArrayList<String>();
-        		List<String> marcaArr = new ArrayList<String>();
-    			List<String> linkArr = new ArrayList<String>();
-    			List<String> imagenArr = new ArrayList<String>();
-    			List<BigDecimal> preciokArr = new ArrayList<BigDecimal>();
-        		Elements entradas1 = el.select("h1.title");
-                if(entradas1.isEmpty()) {
-                	break;
-                }
-                for (Element elem : entradas1) {
-                	String nombre = elem.select("a").attr("title");
-                	nombre = toCamelCase(nombre.toLowerCase());
-                	String link = elem.select("a").attr("href");
-                	nombresArr.add(nombre);
-                	linkArr.add(link);
-                	String marca = null;
-  	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
-    	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
-    	            	}
-    	            	marcaArr.add(marca);
-	            	}
-                }
-                Elements entradas2 = el.select("div.image-box");
-                for (Element elem : entradas2) {
-                	String img = elem.select("img").attr("src");
-                	imagenArr.add(img);
-                }
-                Elements entradas3 = el.select("div.price-box");
-                for (Element elem : entradas3) {
-                	String precio = elem.select("span.price").text();
-                	if(!precio.isEmpty()) {
-    	        		String[] precioArr1 = precio.split(",");
-    	        		String precioMerge = null;
-    	        		if(precioArr1[0].indexOf(".") != -1) {
-    	        			precioMerge = precioArr1[0].substring(2,3) + precioArr1[0].substring(4,precioArr1[0].length());
-    	        		} else{ 
-    	        			precioMerge = precioArr1[0].substring(2,precioArr1[0].length());
-    	        		}
-    	        		String precioS2 = precioMerge+"."+precioArr1[1].substring(0, 2);
-    	        		BigDecimal precioD = new BigDecimal(precioS2);
-    	        		preciokArr.add(precioD);
-                	}
-                }
-                Optional<Ropa> matchingObject = ropaGuardar.stream().
-                	    filter(r -> r.getNombre().equals(nombresArr.get(0))).
-                	    findFirst();
-                ropa = matchingObject.orElse(null);
-                if(ropa != null) {
-                	break;
-                }
-                for(int i=0; i<preciokArr.size(); i++) {
-                	ropaGuardar.add(new Ropa(imagenArr.get(i), nombresArr.get(i), preciokArr.get(i), 
-                			marcaArr.get(i), null, null, null, linkArr.get(i), "dexter"));
-                }
-        	}
-        	if(ropa != null) {
-            	break;
-            }
-        	contPagina++;
-        	urlCalzado = "https://www.dexter.com.ar/" + path + contPagina.toString();
-        }
-        return ropaGuardar;
-	}
-	
-	@Override
-	public List<Ropa> obtenerProductosFotter(String path, String tipo) throws ServiceException {
-		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
-		Integer contPagina = 1;
-		String urlCalzado = "https://www.fotter.com.ar/" + path + contPagina.toString();
-		Ropa ropa = null;
-		while (getStatusConnectionCode(urlCalzado) == 200) {
-        	Document document = getHtmlDocument(urlCalzado);
-        	Elements entradas = document.select("div.category-products > ul");
-        	for(Element el : entradas) {
-        		List<String> nombresArr = new ArrayList<String>();
-        		List<String> marcaArr = new ArrayList<String>();
-    			List<String> linkArr = new ArrayList<String>();
-    			List<String> imagenArr = new ArrayList<String>();
-    			List<BigDecimal> preciokArr = new ArrayList<BigDecimal>();
-        		Elements entradas1 = el.select("h2.product-name");
-                for (Element elem : entradas1) {
-                	String nombre = elem.select("a").attr("title");
-                	nombre = toCamelCase(nombre.toLowerCase());
-                	String link = elem.select("a").attr("href");
-                	nombresArr.add(nombre);
-                	linkArr.add(link);
-                	String marca = null;
-  	            	if(nombre != null && tipo.equals("zapatillas")) {
-	            		marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
-    	            	if(marca.equals("multipleResult")) {
-    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
-    	            	}
-    	            	marcaArr.add(marca);
-	            	}
-                }
-                Elements entradas2 = el.select("a.product-image");
-                for (Element elem : entradas2) {
-                	String img = elem.select("img").attr("src");
-                	imagenArr.add(img);
-                }
-                Elements entradas3 = el.select("div.price-box");
-                for (Element elem : entradas3) {
-                	String precio = elem.select("span.price").text();
-                	if(!precio.isEmpty()) {
-    	        		String[] precioArr1 = precio.split(",");
-    	        		String precioMerge = null;
-    	        		if(precioArr1[0].indexOf(".") != -1) {
-    	        			precioMerge = precioArr1[0].substring(2,3) + precioArr1[0].substring(4,precioArr1[0].length());
-    	        		} else{ 
-    	        			precioMerge = precioArr1[0].substring(2,precioArr1[0].length());
-    	        		}
-    	        		String precioS2 = precioMerge+"."+precioArr1[1].substring(0, 2);
-    	        		BigDecimal precioD = new BigDecimal(precioS2);
-    	        		preciokArr.add(precioD);
-                	}
-                }
-                Optional<Ropa> matchingObject = ropaGuardar.stream().
-                	    filter(r -> r.getNombre().equals(nombresArr.get(0))).
-                	    findFirst();
-                ropa = matchingObject.orElse(null);
-                if(ropa != null) {
-                	break;
-                }
-                for(int i=0; i<preciokArr.size(); i++) {
-                	ropaGuardar.add(new Ropa(imagenArr.get(i), nombresArr.get(i), preciokArr.get(i), 
-                			marcaArr.get(i), null, null, null, linkArr.get(i), "fotter"));
-                }
-        	}
-        	if(ropa != null) {
-            	break;
-            }
-        	contPagina++;
-        	urlCalzado = "https://www.fotter.com.ar/" + path + contPagina.toString();
-        }
-        return ropaGuardar;
-	}
-	
-	@Override
 	public List<Ropa> obtenerProductosLocalsOnly(String path, String tipo) throws ServiceException {
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
 		Integer contPagina = 1;
@@ -797,7 +648,9 @@ public class ScrapingServiceImpl implements ScrapingService {
 		String uri = "";
 		switch (tipoSingular.toLowerCase()) {
 	        case "zapatilla":  uri = "https://zapatillas.mercadolibre.com.ar/";
+	        break;
 	        case "zapato":  uri = "https://zapatos.mercadolibre.com.ar/";
+	        break;
 	        case "mocasin":  uri = "https://zapatos.mercadolibre.com.ar/";
 		}
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
@@ -810,7 +663,7 @@ public class ScrapingServiceImpl implements ScrapingService {
             	for (Element elem : entradas) {
             		Elements entradaNombre = elem.select("h2.item__title.list-view-item-title > span");
 	            	String nombre = entradaNombre.get(0).text();
-	            	if(nombre.toUpperCase().indexOf(tipoPlural) != -1 || nombre.toUpperCase().indexOf(tipoSingular) != -1) {
+	            	if(nombre.toUpperCase().indexOf(tipoPlural.toUpperCase()) != -1 || nombre.toUpperCase().indexOf(tipoSingular.toUpperCase()) != -1) {
 	            		nombre = toCamelCase(nombre.toLowerCase());
 		            	String marca = null;
 		            	String [] marcas = nombre.split(" ");
@@ -878,31 +731,41 @@ public class ScrapingServiceImpl implements ScrapingService {
 		String urlCalzado = "https://calzadosborsalino.com/" + path + contPagina.toString();
         while (getStatusConnectionCode(urlCalzado) == 200) {
             Document document = getHtmlDocument(urlCalzado);
-            Elements entradas = document.select("div.products.row row-small.large-columns-3.medium-columns-3.small-columns-2");
+            Elements entradas = document.select("div.products.row.row-small.large-columns-3.medium-columns-3.small-columns-2 > div");
             if(entradas.size() != 0){
             	for (Element elem : entradas) {
-            		Elements entradaNombre = elem.select("p.itm-title");
+            		Elements entradaNombre = elem.select("p.name.product-title");
 	            	String nombre = entradaNombre.get(0).text();
 	            	nombre = toCamelCase(nombre.toLowerCase());
-	            	Elements entradaImagen = elem.select("div.lazyImage [data-src]");
-	            	String imagenTag = entradaImagen.get(0).toString();
-	            	int indx = imagenTag.indexOf("data-src");
-	            	String imgTmp = imagenTag.substring(indx+10, imagenTag.length());
-	            	int indx2 = imgTmp.indexOf(" ");
-	            	String img = imgTmp.substring(0, indx2-1);
-	            	Elements entradaPrecio = elem.select("p.itm-priceBox [class=itm-price special]");
-	            	if(entradaPrecio.size() == 0){
-	            		entradaPrecio = elem.select("p.itm-priceBox [class=itm-price]");
+	            	Elements entradaImagen = elem.select("div.box-image");
+	            	String img = entradaImagen.select("img").attr("src");
+	            	Elements entradaPrecio = elem.select("div.price-wrapper > span.price");
+	            	Elements entradaPrecio2 = entradaPrecio.select("ins");
+	            	String precioE = "0";
+	            	if(entradaPrecio2.size() != 0) {
+	            		String precioAux = entradaPrecio2.select("span.woocommerce-Price-amount.amount").toString();
+	            		int index = precioAux.indexOf("$");
+	            		precioE = precioAux.substring(index+8);
+	            		int index2 = precioE.indexOf("<");
+	            		precioE = precioE.substring(0,index2);
+	            	} else {
+	            		String precioAux = entradaPrecio.select("span.woocommerce-Price-amount.amount").toString();
+	            		int index = precioAux.indexOf("$");
+	            		precioE = precioAux.substring(index+8);
+	            		int index2 = precioE.indexOf("<");
+	            		precioE = precioE.substring(0,index2);
 	            	}
-	            	String tmp = entradaPrecio.get(0).text();
-	            	int dotindx = tmp.indexOf(",");
-	            	String enteros = tmp.substring(2,dotindx);
-	            	String decimales = tmp.substring(dotindx+1, tmp.length());
-	            	String precioParse = enteros+"."+decimales;
-	            	BigDecimal precio = new BigDecimal(precioParse);
-	            	Document doc = Jsoup.parse(elem.toString());
-	            	Element link = doc.select("a").first();
-	            	String linkHref = link.attr("href");
+	            	String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(".") != -1) {
+	            		precioArr = precioE.split("\\.");
+	            		precioS = precioArr[0]+precioArr[1];
+	            	} else{
+	            		precioS = precioE;
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+	            	Elements link = elem.select("div.box-imagea");
+	            	String linkHref = link.select("a").attr("href");
 	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Borsalino", null, null, null, linkHref, "borsalino"));
             		
 	            }
@@ -915,6 +778,139 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosDashGridMark(String path, String pagina) throws ServiceException {
+		String uri = "";
+		switch (pagina) {
+	        case "dash":  uri = "https://www.tiendadash.com.ar/";
+	        break;
+	        case "grid":  uri = "https://www.grid.com.ar/";
+	        break;
+	        case "mark":  uri = "https://www.marksports.com.ar/";
+		}
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		String urlCalzado = uri + path;
+		if (getStatusConnectionCode(urlCalzado) == 200) {
+        	Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = null;
+        	if(pagina.equals("mark")) {
+        		entradas = document.select("div.prateleira.vitrine.n1colunas > ul");
+        	}else {
+        		entradas = document.select("div.prateleira.vitrine.shelf.n1colunas > ul");
+        	}
+        	for(Element el : entradas) {
+        		Elements entradasName = el.select("div.product-name");
+        		String nombre = entradasName.select("a").attr("title");
+            	nombre = toCamelCase(nombre.toLowerCase());
+            	String link = entradasName.select("a").attr("href");
+            	String marca = null;
+            	marca = marcasService.obtenerMarcaSegunAlias(nombre.split(" ")[1]);
+            	if(marca.equals("multipleResult")) {
+            		marca= marcasService.obtenerMarcaSegunAliasSimilar(nombre.split(" ")[1]+" "+nombre.split(" ")[2]);
+            	}
+                Elements entradasImg = el.select("a.product-image");
+                String img = entradasImg.select("img").attr("src");
+                Elements entradasPrice = el.select("div.price");
+                String precio = entradasPrice.select("span.best-price").text();
+                BigDecimal precioD = null;
+                if(!precio.isEmpty()) {
+	        		String[] precioArr1 = precio.split(",");
+	        		String precioMerge = null;
+	        		if(precioArr1[0].indexOf(".") != -1) {
+	        			precioMerge = precioArr1[0].substring(2,3) + precioArr1[0].substring(4,precioArr1[0].length());
+	        		} else{ 
+	        			precioMerge = precioArr1[0].substring(2,precioArr1[0].length());
+	        		}
+	        		String precioS2 = precioMerge+"."+precioArr1[1].substring(0, 2);
+	        		precioD = new BigDecimal(precioS2);
+            	}
+            	ropaGuardar.add(new Ropa(img, nombre, precioD, 
+            			marca, null, null, null, link, pagina));
+        	}
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosVicus(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.vicusba.com/" + path + "XpO" + contPagina.toString() + "XtOcXvOgalleryxSM";
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("div.rowsWrapper > ol > li");
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+            		Elements entradasName = el.select("a.title");
+            		final String nombre = "Zapatillas Vicus " + entradasName.attr("title");
+                	String link = "https://www.vicusba.com"+entradasName.attr("href");
+                    Elements entradasImg = el.select("figure > a");
+                    String img = entradasImg.select("img").attr("src");
+                    Elements entradasPrice = el.select("ul.itemPrice");
+                    String precio = entradasPrice.select("span.ch-price.price").text();
+                    precio = precio.substring(2,precio.length()).replace(',','.');
+                    BigDecimal precioD = null;
+                    if(!precio.isEmpty()) {
+    	        		precioD = new BigDecimal(precio);
+                	}
+                	ropaGuardar.add(new Ropa(img, nombre, precioD, 
+                			"Vicus", null, null, null, link, "vicus"));
+            	}
+            	contPagina++;
+            	urlCalzado = "https://www.vicusba.com/" + path + "XpO" + contPagina.toString() + "XtOcXvOgalleryxSM";
+        	} else {
+        		break;
+        	}
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosPanther(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.panther.com.ar/index.php/" + path + contPagina.toString();
+		Ropa ropa = null;
+		int cont = 0;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.category-products > ul > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("h2.product-name");
+	            	String nombre = entradaNombre.select("a").attr("title").toString();
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	final String name = nombre;
+	            	Optional<Ropa> matchingObject = ropaGuardar.stream().filter(r->r.getNombre().equals(name)).findFirst();
+	            	ropa = matchingObject.orElse(null);
+	            	if(ropa != null){
+	            		cont++;
+	            		break;
+	            	}
+	            	String linkHref = entradaNombre.select("a").attr("href");
+	            	Elements entradaImagen = elem.select("div.product-hover");
+	            	String img = entradaImagen.select("img.img-responsive").attr("src").trim();
+	            	Elements entradaPrecio = elem.select("div.price-box");
+	            	String precio = entradaPrecio.select("span.price").text();
+	            	if(precio.indexOf(".") != -1) {
+	            		String[] precioArr = precio.split("\\.");
+		            	precio = precioArr[0]+precioArr[1];
+	            	}
+	            	precio = precio.substring(2,precio.length()).replace(',','.');
+	            	BigDecimal precioBd = new BigDecimal(precio);
+	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Panther", null, null, null, linkHref, "panther"));
+	            }
+            	if(ropa != null && cont == 2){
+            		break;
+            	}
+	        	contPagina++;
+	        	urlCalzado = "https://www.panther.com.ar/index.php/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
 	
 	/*
 	 * ***********************************

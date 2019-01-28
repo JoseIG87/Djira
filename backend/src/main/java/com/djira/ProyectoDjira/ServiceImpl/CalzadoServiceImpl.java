@@ -109,7 +109,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/urbanas/?page=", "zapatillas"));
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/urbanas/?page=", "zapatillas"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -335,6 +335,84 @@ public class CalzadoServiceImpl implements CalzadoService {
 		}
 		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
 		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Moda?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "grid"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Grid, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Moda?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dash, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Moda?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Mark, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosVicus("botas-mid_qO25508246"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosVicus("clasicas_qO30156414"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosVicus("genesis_qO30173160"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosVicus("folk_qO30172504"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Vicus, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosPanther("calzado/zapatillas.html?p="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Panther, total de productos: " + calzadoEditar.size());
+		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
 		LOG.info("Finaliza busqueda de zapatillas urbanas masculinas, total de productos: " + calzadoGuardar.size());
@@ -352,7 +430,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/deportivas/?page=", "zapatillas"));
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/deportivas/?page=", "zapatillas"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("deportiva");
@@ -473,6 +551,76 @@ public class CalzadoServiceImpl implements CalzadoService {
 		}
 		LOG.info("Finaliza busqueda en Ringo, total de productos: " + calzadoEditar.size());
 		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Running?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "grid"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Entrenamiento?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "grid"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Basket?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "grid"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("deportiva");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Grid, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Basket?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Entrenamiento?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Hockey?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Running?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Tenis?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "dash"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("deportiva");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dash, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Basket?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Entrenamiento?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Hockey?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Running?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDashGridMark("calzado/zapatillas/Hombre/Tenis?O=OrderByReleaseDateDESC&PS=30&map=c,c,specificationFilter_23,specificationFilter_24", "mark"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("deportiva");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Mark, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosVicus("deportivas_qO27070488"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("deportiva");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Vicus, total de productos: " + calzadoEditar.size());
+		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
 		LOG.info("Finaliza busqueda de zapatillas deportivas masculinas, total de productos: " + calzadoGuardar.size());
@@ -490,7 +638,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/zapatos/?page=", "zapatos"));
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/zapatos/?page=", "zapatos"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapato");
 			zapa.setGenero("hombre");
@@ -531,7 +679,22 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/vestir/page/"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/acordonado-hombre/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Borsalino, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);

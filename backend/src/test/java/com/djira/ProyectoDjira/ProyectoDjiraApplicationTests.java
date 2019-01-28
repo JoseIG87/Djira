@@ -1,4 +1,4 @@
-package java.com.djira.ProyectoDjira;
+package com.djira.ProyectoDjira;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
