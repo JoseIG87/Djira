@@ -865,6 +865,57 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosTheNetBoutique(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.thenetboutique.com/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("div.container-fluid.products-list > div.row > div");
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+        			Elements info = el.select("div.info");
+        			String nombre = info.select("span").get(0).toString();
+        			int indx = nombre.indexOf(">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+            		String marca = info.select("h5").get(0).toString();
+            		int indx2 = marca.indexOf(">");
+            		marca = marca.substring(indx2+2, marca.length());
+	            	indx2 = marca.indexOf("<");
+	            	marca = marca.substring(0,indx2);
+            		marca = marcasService.obtenerMarcaSegunAlias(marca.split(" ")[0]);
+	            	if(marca.equals("multipleResult")) {
+	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(marca.split(" ")[0]+" "+marca.split(" ")[1]);
+	            	}
+	            	Elements linkImg = el.select("a.col-xs-6.col-sm-4.product");
+                	String link = linkImg.attr("href");
+                	String img = linkImg.select("figure > img").attr("data-src");
+                    String precioE = info.select("span.price").text();
+                    precioE = precioE.substring(1,precioE.length()).trim();
+                    String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(".") != -1) {
+	            		precioArr = precioE.split("\\.");
+	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
+	            	} else{
+	            		precioS = precioE;
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+                	ropaGuardar.add(new Ropa(img, nombre, precio, 
+                			marca, null, null, null, link, "thenetboutique"));
+            	}
+            	contPagina++;
+            	urlCalzado = "https://www.thenetboutique.com/" + path + contPagina.toString();
+        	} else {
+        		break;
+        	}
+        }
+        return ropaGuardar;
+	}
+	
 	
 	/*
 	 * ***********************************
@@ -1036,6 +1087,7 @@ public class ScrapingServiceImpl implements ScrapingService {
         }
         return ropaGuardar;
 	}
+	
 	
 	/**
 	 * Con esta método compruebo el Status code de la respuesta que recibo al hacer la petición
