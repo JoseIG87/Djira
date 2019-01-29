@@ -865,6 +865,44 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	
+	/*
+	 * ***********************************
+	 *  SOLO HOMBRES
+	 * ***********************************
+	 */
+	
+	@Override
+	public List<Ropa> obtenerProductosValkymia(String path, String tipo) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		String urlCalzado = "https://valkymia.com/" + path;
+		if (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.category-products > ul > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("h2.product-name > a");
+	            	String nombre = entradaNombre.attr("title");
+	            	nombre = toCamelCase(tipo) + " Valkymia " + toCamelCase(nombre.toLowerCase());
+	            	Elements entradaImagen = elem.select("a.product-image");
+	            	Elements imagen = entradaImagen.select("img");
+	            	String img = imagen.attr("src").trim();
+	            	Elements entradaPrecio = elem.select("div.price-box > p.special-price");
+	            	if(entradaPrecio.size() == 0) {
+	            		entradaPrecio = elem.select("div.price-box > p.old-price");
+	            	}
+	            	Elements precio = entradaPrecio.select("span.price");
+	            	String precioS = precio.get(0).text();
+	            	BigDecimal precioBd = new BigDecimal(precioS.substring(1, precioS.length()));
+	            	Element link = elem.select("h2.product-name > a").first();
+	            	String linkHref = link.attr("href");
+	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Valkymia", null, null, null, linkHref, "valkymia"));
+	            }
+            }
+        }
+        return ropaGuardar;
+	}
+	
 	@Override
 	public List<Ropa> obtenerProductosPanther(String path) throws ServiceException {
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
@@ -900,7 +938,7 @@ public class ScrapingServiceImpl implements ScrapingService {
 	            	BigDecimal precioBd = new BigDecimal(precio);
 	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Panther", null, null, null, linkHref, "panther"));
 	            }
-            	if(ropa != null && cont == 2){
+            	if(ropa != null && cont == 10){
             		break;
             	}
 	        	contPagina++;
@@ -912,38 +950,88 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
-	/*
-	 * ***********************************
-	 *  SOLO HOMBRES
-	 * ***********************************
-	 */
-	
 	@Override
-	public List<Ropa> obtenerProductosValkymia(String path, String tipo) throws ServiceException {
+	public List<Ropa> obtenerProductosDorian(String path) throws ServiceException {
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
-		String urlCalzado = "https://valkymia.com/" + path;
+		String urlCalzado = "https://www.dorianargentina.com/" + path;
 		if (getStatusConnectionCode(urlCalzado) == 200) {
             Document document = getHtmlDocument(urlCalzado);
-            Elements entradas = document.select("div.category-products > ul > li");
+            Elements entradas1 = document.select("div.product-table > div.product-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.product-item.dest-gral ");
+            		for(Element elem : entradas2) {
+            			Elements entradaNombreLinkPrecio = elem.select("div.bajada");
+    	            	String nombre = entradaNombreLinkPrecio.select("div.title > h3 > a").attr("title");
+    	            	nombre = toCamelCase(nombre.toLowerCase());
+    	            	String linkHref = entradaNombreLinkPrecio.select("div.title > h3 > a").attr("href");
+    	            	Elements entradaImagen = elem.select("div.head");
+    	            	String img = entradaImagen.select("img").attr("src").trim();
+    	            	Elements entradaPrecio = entradaNombreLinkPrecio.select("div.price");
+    	            	String precio = entradaPrecio.select("span.price").attr("content");
+    	            	BigDecimal precioBd = new BigDecimal(precio);
+    	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Dorian", null, null, null, linkHref, "dorian"));
+            		}
+	            }
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosGuante(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.guante.com.ar/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.woocommerce.columns-3 > ul > li");
             if(entradas.size() != 0){
             	for (Element elem : entradas) {
-            		Elements entradaNombre = elem.select("h2.product-name > a");
-	            	String nombre = entradaNombre.attr("title");
-	            	nombre = toCamelCase(tipo) + " Valkymia " + toCamelCase(nombre.toLowerCase());
-	            	Elements entradaImagen = elem.select("a.product-image");
-	            	Elements imagen = entradaImagen.select("img");
-	            	String img = imagen.attr("src").trim();
-	            	Elements entradaPrecio = elem.select("div.price-box > p.special-price");
-	            	if(entradaPrecio.size() == 0) {
-	            		entradaPrecio = elem.select("div.price-box > p.old-price");
+            		Elements entradaNombre = elem.select("a > h2.woocommerce-loop-product__title");
+	            	String nombre = entradaNombre.toString();
+	            	if(nombre.length() == 0) {
+	            		break;
 	            	}
-	            	Elements precio = entradaPrecio.select("span.price");
-	            	String precioS = precio.get(0).text();
-	            	BigDecimal precioBd = new BigDecimal(precioS.substring(1, precioS.length()));
-	            	Element link = elem.select("h2.product-name > a").first();
-	            	String linkHref = link.attr("href");
-	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Valkymia", null, null, null, linkHref, "valkymia"));
+	            	int indx = nombre.indexOf("\">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	String linkHref = elem.select("a").attr("href");
+	            	Elements entradaImagen = elem.select("div.orise-store-product-image-container.progression-studios-shop-image-scale");
+	            	String img = entradaImagen.select("img.attachment-shop_catalog.size-shop_catalog.wp-post-image").attr("src").trim();
+	            	Elements entradaPrecio = elem.select("a > span.price");
+	            	Elements entradaPrecio2 = entradaPrecio.select("ins");
+	            	String precioE = "0";
+	            	if(entradaPrecio2.size() != 0) {
+	            		String precioAux = entradaPrecio2.select("span.woocommerce-Price-amount.amount").toString();
+	            		int index = precioAux.indexOf("$");
+	            		precioE = precioAux.substring(index+8);
+	            		int index2 = precioE.indexOf("<");
+	            		precioE = precioE.substring(0,index2);
+	            	} else {
+	            		String precioAux = entradaPrecio.select("span.woocommerce-Price-amount.amount").toString();
+	            		int index = precioAux.indexOf("$");
+	            		precioE = precioAux.substring(index+8);
+	            		int index2 = precioE.indexOf("<");
+	            		precioE = precioE.substring(0,index2);
+	            	}
+	            	String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(".") != -1) {
+	            		precioArr = precioE.split("\\.");
+	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
+	            	} else{
+	            		precioS = precioE;
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Guante", null, null, null, linkHref, "guante"));
 	            }
+	        	contPagina++;
+	        	urlCalzado = "https://www.guante.com.ar/" + path + contPagina.toString();
+            }else{
+            	break;
             }
         }
         return ropaGuardar;

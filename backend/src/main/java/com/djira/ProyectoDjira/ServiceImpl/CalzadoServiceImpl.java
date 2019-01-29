@@ -396,7 +396,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Vicus, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en Vicus, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar.addAll(scrapingService.obtenerProductosPanther("calzado/zapatillas.html?p="));
 		for(Ropa zapa : calzadoEditar) {
@@ -411,7 +411,22 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Panther, total de productos: " + calzadoEditar.size());
+		LOG.info("Finaliza busqueda en Panther, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosGuante("categoria-producto/tipo-de-calzado/zapatillas/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
@@ -679,7 +694,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/vestir/page/"));
 		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/acordonado-hombre/page/"));
@@ -695,6 +710,49 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en Borsalino, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosPanther("calzado/zapatos.html?p="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Panther, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("zapatos/"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("botas/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dorian, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosGuante("categoria-producto/tipo-de-calzado/zapatos/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);

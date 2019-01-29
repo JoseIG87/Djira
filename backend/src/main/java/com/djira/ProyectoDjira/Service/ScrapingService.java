@@ -38,5 +38,9 @@ public interface ScrapingService {
 	List<Ropa> obtenerProductosVicus(String path) throws ServiceException;
 	
 	List<Ropa> obtenerProductosPanther(String path) throws ServiceException;
+	
+	List<Ropa> obtenerProductosDorian(String path) throws ServiceException;
+	
+	List<Ropa> obtenerProductosGuante(String path) throws ServiceException;
 
 }
