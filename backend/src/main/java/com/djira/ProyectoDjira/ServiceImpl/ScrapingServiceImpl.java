@@ -901,7 +901,7 @@ public class ScrapingServiceImpl implements ScrapingService {
 	            		precioArr = precioE.split("\\.");
 	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
 	            	} else{
-	            		precioS = precioE;
+	            		precioS = precioE.replace(',','.');
 	            	}
 	            	BigDecimal precio = new BigDecimal(precioS);
                 	ropaGuardar.add(new Ropa(img, nombre, precio, 
@@ -916,6 +916,108 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosTejano(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://tejano.com.ar/" + path + contPagina.toString();
+		Ropa ropa = null;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+			Elements entradas = document.select("div.products.wrapper.grid.columns4.products-grid > ol > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombre = elem.select("a.product-item-link");
+	            	String nombre = entradaNombre.toString();
+	            	if(nombre.length() == 0) {
+	            		break;
+	            	}
+	            	int indx = nombre.indexOf(">");
+	            	nombre = nombre.substring(indx+1, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = toCamelCase(nombre.toLowerCase()).trim();
+	            	final String name = nombre;
+	            	Optional<Ropa> matchingObject = ropaGuardar.stream().filter(r->r.getNombre().equals(name)).findFirst();
+	            	ropa = matchingObject.orElse(null);
+	            	if(ropa != null){
+	            		break;
+	            	}
+	            	String linkHref = entradaNombre.attr("href");
+	            	Elements entradaImagen = elem.select("div.product.photo.product-item-photo > a > img");
+	            	String img = entradaImagen.attr("src").trim();
+	            	Elements entradaPrecio = elem.select("span.price");
+	            	String precioAux = entradaPrecio.get(0).toString();
+            		int index1 = precioAux.indexOf("$");
+            		precioAux = precioAux.substring(index1+1,precioAux.length());
+            		int index2 = precioAux.indexOf("<");
+            		precioAux = precioAux.substring(0,index2);
+	            	String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioAux.indexOf(".") != -1) {
+	            		precioArr = precioAux.split("\\.");
+	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
+	            	} else{
+	            		precioS = precioAux.replace(',','.');
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Tejano", null, null, null, linkHref, "tejano"));
+	            }
+            	if(ropa != null){
+            		break;
+            	}
+	        	contPagina++;
+	        	urlCalzado = "https://tejano.com.ar/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosC1rca(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://c1rca.com.ar/shop/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("div.products > article");
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+        			Elements info = el.select("div.product-description");
+        			String nombre = info.select("h3.h3.product-title > a").get(0).toString();
+        			int indx = nombre.indexOf("\">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = toCamelCase(nombre.toLowerCase()).trim();
+	            	Elements linkImg = info.select("h3.h3.product-title");
+                	String link = linkImg.attr("href");
+                	String img = el.select("a.thumbnail.product-thumbnail > img").attr("src");
+                    String precioE = info.select("div.product-price-and-shipping > span.price").text();
+                    precioE = precioE.substring(1,precioE.length());
+                    String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(".") != -1) {
+	            		precioArr = precioE.split("\\.");
+	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
+	            	} else{
+	            		precioS = precioE.replace(',','.');
+	            	}
+	            	precioS = precioS.substring(1,precioS.length());
+	            	BigDecimal precio = new BigDecimal(precioS);
+                	ropaGuardar.add(new Ropa(img, nombre, precio, 
+                			"C1rca", null, null, null, link, "c1rca"));
+            	}
+            	contPagina++;
+            	urlCalzado = "https://c1rca.com.ar/shop/" + path + contPagina.toString();
+        	} else {
+        		break;
+        	}
+        }
+        return ropaGuardar;
+	}
 	
 	/*
 	 * ***********************************
@@ -1074,7 +1176,7 @@ public class ScrapingServiceImpl implements ScrapingService {
 	            		precioArr = precioE.split("\\.");
 	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
 	            	} else{
-	            		precioS = precioE;
+	            		precioS = precioE.replace(',','.');
 	            	}
 	            	BigDecimal precio = new BigDecimal(precioS);
 	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Guante", null, null, null, linkHref, "guante"));
@@ -1084,6 +1186,48 @@ public class ScrapingServiceImpl implements ScrapingService {
             }else{
             	break;
             }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosAndez(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://andezoficial.com.ar/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("ul.products.columns-4 > li");       
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+        			Elements nombreE = el.select("h3.woocommerce-loop-product__title > a");
+        			String nombre = nombreE.get(0).toString();
+        			int indx = nombre.indexOf("\">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = toCamelCase(nombre.toLowerCase()).trim();
+	            	String link = nombreE.attr("href");
+                	String img = el.select("div.product-header > a > img").attr("src");
+                    String precioE = el.select("span.price").text();
+                    precioE = precioE.substring(1,precioE.length());
+                    String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(".") != -1) {
+	            		precioArr = precioE.split("\\,");
+	            		precioS = (precioArr[0]+precioArr[1]);
+	            	} else{
+	            		precioS = precioE;
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+                	ropaGuardar.add(new Ropa(img, nombre, precio, 
+                			"Andez", null, null, null, link, "andez"));
+            	}
+            	contPagina++;
+            	urlCalzado = "https://andezoficial.com.ar/" + path + contPagina.toString();
+        	} else {
+        		break;
+        	}
         }
         return ropaGuardar;
 	}

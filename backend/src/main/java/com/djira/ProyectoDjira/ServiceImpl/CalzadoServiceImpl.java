@@ -426,7 +426,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar.addAll(scrapingService.obtenerProductosTheNetBoutique("hombres/catalogo/zapatos/zapatillas?pageindex="));
 		for(Ropa zapa : calzadoEditar) {
@@ -442,6 +442,51 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en The Net Boutique, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosTejano("hombres/calzado.html?p="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Tejano, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosC1rca("168-zapatillas?page="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosAndez("categoria-producto/zapatillas/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
