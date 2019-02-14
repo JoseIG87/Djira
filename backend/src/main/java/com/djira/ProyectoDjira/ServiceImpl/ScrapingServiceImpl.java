@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.djira.ProyectoDjira.Domain.Ropa;
 import com.djira.ProyectoDjira.Service.MarcasService;
@@ -1012,6 +1013,73 @@ public class ScrapingServiceImpl implements ScrapingService {
             	}
             	contPagina++;
             	urlCalzado = "https://c1rca.com.ar/shop/" + path + contPagina.toString();
+        	} else {
+        		break;
+        	}
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosRevolutionss(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.revolutionss.com.ar/buscapagina?" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("div.prateleira-category.n30colunas > ul > li");       
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+        			Elements nombreE = el.select("div.product-name > a");
+        			if(nombreE.size() != 0) {
+        				String nombre = nombreE.attr("title");
+        				String marca = null;
+        				String [] marcas = nombre.split(" ");
+	            		for(int i=0; i < marcas.length; i++) {
+	            			marca = marcasService.obtenerMarcaSegunAlias(marcas[i]);
+	            			if(marca.split(" ").length >= 2 || marca.equals("multipleResult")) {
+	            				if(marca.equals("multipleResult")) {
+		    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(marcas[i]+" "+marcas[i+1]);
+		    	            	}
+	            				break;
+	            			} else {
+	            				marca = marcasService.obtenerMarca(marcas[i]);
+	            				if(marca != null) {
+	            					break;
+	            				}
+	            			}
+	            		}
+	            		if(marca == null || marca == "zapatilla" ) {
+	            			marca = "Otro";
+	            		}
+    	            	String link = nombreE.attr("href");
+                    	String img = el.select("div.producto-inside > a > img").attr("src");
+                        String precioE = el.select("div.precio-content").text();
+                        if(StringUtils.countOccurrencesOf(precioE, "$") > 1) {
+                        	String[] precioArrAux;
+                        	precioE = precioE.substring(1,precioE.length());
+                        	precioArrAux = precioE.split("\\$");
+                        	precioE = precioArrAux[1];
+                        }else {
+                        	precioE = precioE.substring(1,precioE.length());
+                        }
+                        String[] precioArr;
+                        String[] precioArrEnt;
+    	            	String precioS = "0";
+    	            	if(precioE.indexOf(".") != -1) {
+    	            		precioArr = precioE.split("\\,");
+    	            		precioArrEnt = precioArr[0].split("\\.");
+    	            		precioS = (precioArrEnt[0]+precioArrEnt[1]+"."+precioArr[1]);
+    	            	} else{
+    	            		precioS = precioE.replace(',','.');
+    	            	}
+    	            	BigDecimal precio = new BigDecimal(precioS.trim());
+                    	ropaGuardar.add(new Ropa(img, nombre, precio, 
+                    			marca, null, null, null, link, "revolution"));
+        			}
+            	}
+            	contPagina++;
+            	urlCalzado = "https://www.revolutionss.com.ar/buscapagina?" + path + contPagina.toString();
         	} else {
         		break;
         	}

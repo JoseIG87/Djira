@@ -471,7 +471,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar.addAll(scrapingService.obtenerProductosAndez("categoria-producto/zapatillas/page/"));
 		for(Ropa zapa : calzadoEditar) {
@@ -486,7 +486,22 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());
+		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosRevolutionss("fq=C%3a%2f10%2f&fq=specificationFilter_21%3aZapatillas&fq=specificationFilter_20%3aModa&PS=30&sl=fcce2c9b-ec20-4c1b-969b-17f981adc78f&cc=30&sm=0&PageNumber="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Revolution, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
