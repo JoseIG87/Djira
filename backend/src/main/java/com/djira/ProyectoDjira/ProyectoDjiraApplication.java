@@ -59,8 +59,9 @@ public class ProyectoDjiraApplication extends SpringBootServletInitializer
 	@Override
 	public void run(String... args) throws Exception {
 		
-		servicio.cargarZapatillasUrbanasHombreEnCloud();
+		//servicio.cargarZapatillasUrbanasHombreEnCloud();
 		//servicio.cargarZapatillasDeportivasHombreEnCloud();
+		servicio.cargarZapatillasDeVestirHombreEnCloud();
 		//servicio.cargarZapatosEnCloud();
 		
 	}

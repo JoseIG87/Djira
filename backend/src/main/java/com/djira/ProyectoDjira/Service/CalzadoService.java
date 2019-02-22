@@ -13,6 +13,8 @@ public interface CalzadoService {
 	
 	void cargarZapatillasDeportivasHombreEnCloud() throws ServiceException;
 	
+	void cargarZapatillasDeVestirHombreEnCloud() throws ServiceException;
+	
 	void cargarZapatosEnCloud() throws ServiceException;
 	
 	void cargarMocasinesEnCloud() throws ServiceException;

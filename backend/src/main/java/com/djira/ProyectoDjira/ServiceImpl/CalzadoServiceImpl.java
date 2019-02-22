@@ -109,7 +109,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/urbanas/?page=", "zapatillas"));
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/urbanas/?page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -125,9 +125,9 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en Dafiti, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("moda/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page=", "zapatillas"));
-		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("skate/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page=", "zapatillas"));
-		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("surf/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page=", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("moda/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page="));
+		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("skate/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page="));
+		calzadoEditar.addAll(scrapingService.obtenerProductosNetshoes("surf/zapatillas/masculino?mi=hm_ger_mntop_HOM-CALZ-Zapatillas&psn=Menu_Top&nsCat=Artificial&page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -141,6 +141,21 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en Netshoes, total de productos: " + calzadoEditar.size());
+		
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDexter("fq=C%3a%2f1000005%2f1000009%2f&fq=specificationFilter_11%3aHombre&fq=specificationFilter_15%3aModa&O=OrderByReleaseDateDESC&PS=12&sl=ae9ea699-1a41-4881-b761-d23b759700d5&cc=4&sm=0&PageNumber="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dexter, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
 		calzadoEditar.addAll(scrapingService.obtenerProductosOpensports("hombre/zapatillas/moda.html?p=", "zapatillas"));
@@ -175,7 +190,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en Reebok, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosAdidas("calzado-lifestyle-hombre?sz=48&start=", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosAdidas("calzado-lifestyle-hombre?sz=48&start="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -191,7 +206,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en Adidas, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosRedSport("calzado/zapatillas/Hombre?PS=12&map=c,c,specificationFilter_21&O=OrderByTopSaleDESC#", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosRedSport("fq=C%3a%2f12%2f11%2f&fq=specificationFilter_21%3aHombre&O=OrderByTopSaleDESC&PS=12&sl=dca78f11-a756-4570-94b4-7c2a84fe05d4&cc=12&sm=0&PageNumber="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -207,7 +222,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en Red Sport, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosStockCenter("calzados/zapatillas/Hombre?PS=12&map=c,c,specificationFilter_11&O=OrderByTopSaleDESC#", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosStockCenter("calzados/zapatillas/Hombre?PS=12&map=c,c,specificationFilter_11&O=OrderByTopSaleDESC#"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -223,7 +238,23 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en StockCenter, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosVcp("collections/calzado-zapatillas/zapatillas?page=", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosSportline("fq=C:/1000006/1000013/1000167/&PageNumber=","&fq=specificationFilter_7:MODA&O=OrderByTopSaleDESC&sl=7808f6ed-c896-4a54-9283-fecabc3565de&PS=24&cc=24&sm=0"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en StockCenter, total de productos: " + calzadoEditar.size());
+		
+		/*calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosVcp("collections/calzado-zapatillas/zapatillas?page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -239,39 +270,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		LOG.info("Finaliza busqueda en Vcp, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosFotter("zapatos/zapatos-hombres/zapatillas.html?p=", "zapatillas"));
-		for(Ropa zapa : calzadoEditar) {
-			zapa.setTipo("zapatilla");
-			zapa.setEstilo("urbana");
-			zapa.setGenero("hombre");
-			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
-        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
-				marcasRepo.save(marcaZapa);
-        	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
-				calzadoGuardar.add(zapa);
-			}
-		}
-		LOG.info("Finaliza busqueda en Fotter, total de productos: " + calzadoEditar.size());
-		
-		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosDexter("calzados/zapatillas/Hombre/Zapatillas/Moda?PS=12&map=c,c,specificationFilter_11,specificationFilter_19,specificationFilter_15&O=OrderByTopSaleDESC#", "zapatillas"));
-		for(Ropa zapa : calzadoEditar) {
-			zapa.setTipo("zapatilla");
-			zapa.setEstilo("urbana");
-			zapa.setGenero("hombre");
-			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
-        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
-				marcasRepo.save(marcaZapa);
-        	}
-			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
-				calzadoGuardar.add(zapa);
-			}
-		}
-		LOG.info("Finaliza busqueda en Dexter, total de productos: " + calzadoEditar.size());
-		
-		calzadoEditar = new ArrayList<Ropa>();
-		calzadoEditar.addAll(scrapingService.obtenerProductosLocalsOnly("collections/zapatillas?page=", "zapatillas"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosLocalsOnly("collections/zapatillas?page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapatilla");
 			zapa.setEstilo("urbana");
@@ -486,7 +485,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en C1rca, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar.addAll(scrapingService.obtenerProductosRevolutionss("fq=C%3a%2f10%2f&fq=specificationFilter_21%3aZapatillas&fq=specificationFilter_20%3aModa&PS=30&sl=fcce2c9b-ec20-4c1b-969b-17f981adc78f&cc=30&sm=0&PageNumber="));
 		for(Ropa zapa : calzadoEditar) {
@@ -503,6 +502,52 @@ public class CalzadoServiceImpl implements CalzadoService {
 		}
 		LOG.info("Finaliza busqueda en Revolution, total de productos: " + calzadoEditar.size());
 		
+		calzadoEditar.addAll(scrapingService.obtenerProductosSporting("fq=C%3a%2f1%2f21%2f&PS=48&sl=eac6ad06-e34a-44b8-9b86-919b7ab53129&cc=4&sm=0&PageNumber=", "&fq=specificationFilter_32:MODA"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Sporting, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosSolodeportes("hombre/calzado.html?modelo=Urban&p=", "&tipo_de_calzado=Zapatillas"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Solodeportes, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosLaferiadelcalzado("hombre/zapatillas-urbana/?limit=20&page="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en La feria del calzado, total de productos: " + calzadoEditar.size());*/
+
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
 		LOG.info("Finaliza busqueda de zapatillas urbanas masculinas, total de productos: " + calzadoGuardar.size());
@@ -718,6 +763,54 @@ public class CalzadoServiceImpl implements CalzadoService {
 	}
 	
 	/**
+	 * Metodo para guardar en bbdd todas las zapatillas masculinas de vestir
+	 * @return
+	 * @throws ServiceException
+	 */
+	@Override
+	public void cargarZapatillasDeVestirHombreEnCloud() throws ServiceException {
+		LOG.info("Inicia búsqueda de zapatillas de vestir masculinas");
+		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
+		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
+		
+		/*calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosStone("hombre/urban/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("vestir");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+	    		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+	    	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Stone, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar = new ArrayList<Ropa>();
+		calzadoEditar.addAll(scrapingService.obtenerProductosOggi("zapatos/zapatillas/?limit=12&page="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("vestir");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+	    		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+	    	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Stone, total de productos: " + calzadoEditar.size());
+		
+		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
+		ropaRepo.saveAll(calzadoGuardar);
+		LOG.info("Finaliza busqueda de zapatillas de vestir masculinas, total de productos: " + calzadoGuardar.size());
+	}
+	
+	/**
 	 * Metodo para guardar en bbdd todos los zapatos masculinos
 	 * @return
 	 * @throws ServiceException
@@ -846,7 +939,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/mocasines-masculino/?page=", "mocasines"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/mocasines-masculino/?page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("mocasin");
 			zapa.setGenero("hombre");
