@@ -2,8 +2,12 @@ package com.djira.ProyectoDjira.ServiceImpl;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import org.jsoup.Jsoup;
@@ -1475,6 +1479,50 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosDigitalsport(String pagina, String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.digitalsport.com.ar/" + pagina + "/prods/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+			Document document = getHtmlDocument(urlCalzado);
+        	Elements entradas = document.select("div.productos.conmenu > a.producto");       
+        	if(entradas.size() != 0) {
+        		for(Element el : entradas) {
+        			Elements nameImag = el.select("img.img");
+        			Elements marcaE = el.select("img.logo_marca");
+        			if(nameImag.size() != 0 && marcaE.size() != 0) {
+        				String nombre = toCamelCase(nameImag.attr("alt").toLowerCase());
+        				String marca = null;
+        				marca = marcasService.obtenerMarcaSegunAlias(marcaE.attr("alt"));
+            			if(marca.split(" ").length >= 2 || marca.equals("multipleResult")) {
+            				if(marca.equals("multipleResult")) {
+	    	            		marca= marcasService.obtenerMarcaSegunAliasSimilar(marca);
+	    	            	}
+            			} else {
+            				marca = marcasService.obtenerMarca(marca);
+            			}
+	            		if(marca == null || marca == "zapatilla" ) {
+	            			marca = "Otro";
+	            		}
+    	            	String link = "https://www.digitalsport.com.ar/" + pagina + "/" + el.attr("href");
+                    	String img = "https://www.digitalsport.com.ar/" + pagina + "/" + nameImag.attr("src");
+                        String precioE = el.select("div.precio").text();
+                        precioE = precioE.substring(1,precioE.length());
+    	            	BigDecimal precio = new BigDecimal(precioE);
+                    	ropaGuardar.add(new Ropa(img, nombre, precio, 
+                    			marca, null, null, null, link, pagina));
+        			}
+            	}
+            	contPagina++;
+            	urlCalzado = "https://www.digitalsport.com.ar/" + pagina + "/prods/" + path + contPagina.toString();
+        	} else {
+        		break;
+        	}
+        }
+        return ropaGuardar;
+	}
+	
 	/*
 	 * ***********************************
 	 *  SOLO HOMBRES
@@ -1560,12 +1608,13 @@ public class ScrapingServiceImpl implements ScrapingService {
 	}
 	
 	@Override
-	public List<Ropa> obtenerProductosDorian(String path) throws ServiceException {
+	public List<Ropa> obtenerProductosDorian(String path1, String path2) throws ServiceException {
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
-		String urlCalzado = "https://www.dorianargentina.com/" + path;
-		if (getStatusConnectionCode(urlCalzado) == 200) {
+		int contPagina = 1;
+		String urlCalzado = "https://www.dorianargentina.com/" + path1 + contPagina + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
             Document document = getHtmlDocument(urlCalzado);
-            Elements entradas1 = document.select("div.product-table > div.product-row");
+            Elements entradas1 = document.select("div.product-row");
             if(entradas1.size() != 0){
             	for (Element elem1 : entradas1) {
             		Elements entradas2 = elem1.select("div.product-item.dest-gral ");
@@ -1582,6 +1631,60 @@ public class ScrapingServiceImpl implements ScrapingService {
     	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Dorian", null, null, null, linkHref, "dorian"));
             		}
 	            }
+            	contPagina++;
+            	urlCalzado = "https://www.dorianargentina.com/" + path1 + contPagina + path2;
+            } else {
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosColantuono(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "http://colantuono.com.ar/categoria-producto/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("ul.products.grid > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombrePrecioLink = elem.select("div.desc");
+	            	String nombre =  entradaNombrePrecioLink.select("h4 > a").toString();
+	            	if(nombre.length() == 0) {
+	            		break;
+	            	}
+	            	int indx = nombre.indexOf("\">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	String linkHref = entradaNombrePrecioLink.select("h4 > a").attr("href");
+	            	Elements entradaImagen = elem.select("div.hover_box.hover_box_product > a > div.hover_box_wrapper");
+	            	String img = entradaImagen.select("img.visible_photo.scale-with-grid.wp-post-image").attr("src").trim();
+	            	Elements entradaPrecio = entradaNombrePrecioLink.select("span.price");
+	            	String precioE = "0";
+	            	String precioAux = entradaPrecio.select("span.woocommerce-Price-amount.amount").toString();
+            		int index = precioAux.indexOf("$");
+            		precioE = precioAux.substring(index+8);
+            		int index2 = precioE.indexOf("<");
+            		precioE = precioE.substring(0,index2);
+	            	String[] precioArr;
+	            	String precioS = "0";
+	            	if(precioE.indexOf(",") != -1) {
+	            		precioArr = precioE.split("\\,");
+	            		precioS = (precioArr[0]+precioArr[1]).replace(',','.');
+	            	} else{
+	            		precioS = precioE.replace(',','.');
+	            	}
+	            	BigDecimal precio = new BigDecimal(precioS);
+	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Colantuono", null, null, null, linkHref, "colantuono"));
+	            }
+	        	contPagina++;
+	        	urlCalzado = "http://colantuono.com.ar/categoria-producto/" + path + contPagina.toString();
+            }else{
+            	break;
             }
         }
         return ropaGuardar;
@@ -1743,6 +1846,115 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosGiardini(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://giardini.mitiendanube.com/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.product-row.row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.js-masonry-item.item-container.col-xs-6.col-sm-4.col-md-3.col-lg-3");
+            		if(entradas2.size() != 0){
+                    	for (Element elem : entradas2) {
+		            		Elements entradaNombreLinkPrecio = elem.select("div.item-info-container.clear-both");
+			            	String nombre = entradaNombreLinkPrecio.select("a").attr("title").toString();
+			            	nombre = toCamelCase(nombre.toLowerCase());
+			            	String linkHref = entradaNombreLinkPrecio.select("a").attr("href");
+			            	Elements entradaImagen = elem.select("div.item-image-container.pull-left.p-relative");
+			            	String img = entradaImagen.select("a > img").attr("data-srcset");
+			            	img = img.split(" ")[4];
+			            	Elements entradaPrecio = entradaNombreLinkPrecio.select("span.item-price.d-inline-block.m-top-none.m-bottom-none");
+			            	String precio = entradaPrecio.attr("content");
+			            	BigDecimal precioBd = new BigDecimal(precio);
+			            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Giardini", null, null, null, linkHref, "giardini"));
+                    	}
+            		}
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://giardini.mitiendanube.com/" + path1 + contPagina.toString() + path2;
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosItaloCalzados(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.italocalzados.com.ar/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("div.item");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombreLinkPrecio = elem.select("div.item-info-container");
+	            	String nombre = entradaNombreLinkPrecio.select("div.title > a").attr("title").toString();
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	String linkHref = entradaNombreLinkPrecio.select("div.title > a").attr("href");
+	            	Elements entradaImagen = elem.select("div.item-image-container");
+	            	String img = entradaImagen.select("a > img").attr("data-srcset");
+	            	img = img.split(" ")[2];
+	            	String entradaPrecio = entradaNombreLinkPrecio.select("div.item-price-container.price.m-none-xs > span.price.item-price.p-left-quarter").toString();
+	            	int index1 = entradaPrecio.indexOf("$");
+	            	entradaPrecio = entradaPrecio.substring(index1+1, entradaPrecio.length());
+	            	int index2 = entradaPrecio.indexOf("<");
+	            	entradaPrecio = entradaPrecio.substring(0,index2);
+	            	entradaPrecio = entradaPrecio.replace(".", "");
+	            	entradaPrecio = entradaPrecio.replaceAll(",", ".");
+	            	BigDecimal precio = new BigDecimal(entradaPrecio.trim());
+	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Italocalzados", null, null, null, linkHref, "italocalzados"));
+            	}
+	        	contPagina++;
+	        	urlCalzado = "https://www.italocalzados.com.ar/" + path1 + contPagina.toString() + path2;
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosJaquealrey(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.jaquealrey.com.ar/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.js-product-table.pull-left.row-fluid.m-bottom > div.grid-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.span3.item-container.m-bottom-half");
+            		for (Element elem : entradas2) {
+            			Elements entradaNombreLinkImg = elem.select("div.item-image-container");
+    	            	String nombre = entradaNombreLinkImg.select("div.p-relative > a").attr("title").toString();
+    	            	nombre = toCamelCase(nombre.toLowerCase());
+    	            	String linkHref = entradaNombreLinkImg.select("div.p-relative > a").attr("href");
+    	            	String img = entradaNombreLinkImg.select("div.p-relative > a > img").attr("data-srcset");
+    	            	img = img.split(" ")[2];
+    	            	String entradaPrecio = elem.select("div.item-info-container > div.item-price-container.m-none-xs > span.item-price.h6").toString();
+    	            	int index1 = entradaPrecio.indexOf("$");
+    	            	entradaPrecio = entradaPrecio.substring(index1+1, entradaPrecio.length());
+    	            	int index2 = entradaPrecio.indexOf("<");
+    	            	entradaPrecio = entradaPrecio.substring(0,index2);
+    	            	entradaPrecio = entradaPrecio.replace(".", "");
+    	            	entradaPrecio = entradaPrecio.replaceAll(",", ".");
+    	            	BigDecimal precio = new BigDecimal(entradaPrecio.trim());
+    	            	ropaGuardar.add(new Ropa(img, nombre, precio, "Jaquealrey", null, null, null, linkHref, "jaquealrey"));
+            		}
+            	}
+	        	contPagina++;
+	        	urlCalzado = "https://www.jaquealrey.com.ar/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
 	
 	/**
 	 * Con esta método compruebo el Status code de la respuesta que recibo al hacer la petición

@@ -1,6 +1,7 @@
 package com.djira.ProyectoDjira.Service;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.List;
 
 import com.djira.ProyectoDjira.Dto.MarcasDTO;
@@ -15,7 +16,7 @@ public interface CalzadoService {
 	
 	void cargarZapatillasDeVestirHombreEnCloud() throws ServiceException;
 	
-	void cargarZapatosEnCloud() throws ServiceException;
+	void cargarZapatosEnCloud() throws ServiceException, ParseException;
 	
 	void cargarMocasinesEnCloud() throws ServiceException;
 	

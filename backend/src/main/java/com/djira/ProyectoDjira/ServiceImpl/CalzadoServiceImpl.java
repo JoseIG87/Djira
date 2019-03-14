@@ -1,6 +1,7 @@
 package com.djira.ProyectoDjira.ServiceImpl;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -547,6 +548,25 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en La feria del calzado, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar = new ArrayList<Ropa>();
+		//calzadoEditar.addAll(scrapingService.obtenerProductosDigitalsport("sport78", "?category=1%7C25&gender=1%7C4&discipline=14&page="));
+		//calzadoEditar.addAll(scrapingService.obtenerProductosDigitalsport("fluid", "?category=1%7C25&gender=1%7C4&discipline=14&page="));
+		//calzadoEditar.addAll(scrapingService.obtenerProductosDigitalsport("dionysos", "?category=1%7C25&gender=1%7C4&page="));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDigitalsport("blast", "?category=1%7C25&gender=1%7C4&page="));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("urbana");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Digital sport, total de productos: " + calzadoEditar.size());
 
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
@@ -787,7 +807,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Stone, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en Stone, total de productos: " + calzadoEditar.size());
 		
 		calzadoEditar = new ArrayList<Ropa>();
 		calzadoEditar.addAll(scrapingService.obtenerProductosOggi("zapatos/zapatillas/?limit=12&page="));
@@ -805,6 +825,36 @@ public class CalzadoServiceImpl implements CalzadoService {
 		}
 		LOG.info("Finaliza busqueda en Stone, total de productos: " + calzadoEditar.size());
 		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("zapatillas/?limit=16&page=", "&results_only=true&uid=1552415021206"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("vestir");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dorian, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosJaquealrey("zapatillas/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapatilla");
+			zapa.setEstilo("vestir");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapatilla") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapatilla");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Jaquealrey, total de productos: " + calzadoEditar.size());
+		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
 		LOG.info("Finaliza busqueda de zapatillas de vestir masculinas, total de productos: " + calzadoGuardar.size());
@@ -814,9 +864,10 @@ public class CalzadoServiceImpl implements CalzadoService {
 	 * Metodo para guardar en bbdd todos los zapatos masculinos
 	 * @return
 	 * @throws ServiceException
+	 * @throws ParseException 
 	 */
 	@Override
-	public void cargarZapatosEnCloud() throws ServiceException {
+	public void cargarZapatosEnCloud() throws ServiceException, ParseException {
 		LOG.info("Inicia búsqueda de zapatos masculinos");
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
@@ -893,8 +944,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		}
 		LOG.info("Finaliza busqueda en Panther, total de productos: " + calzadoEditar.size());
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("zapatos/"));
-		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("botas/"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosColantuono("zapatos/page/"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapato");
 			zapa.setGenero("hombre");
@@ -906,9 +956,23 @@ public class CalzadoServiceImpl implements CalzadoService {
 				calzadoGuardar.add(zapa);
 			}
 		}
-		LOG.info("Finaliza busqueda en Dorian, total de productos: " + calzadoEditar.size());*/
+		LOG.info("Finaliza busqueda en Colantuono, total de productos: " + calzadoEditar.size());
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosGuante("categoria-producto/tipo-de-calzado/zapatos/page/"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("zapatos/?limit=16&page=", "&results_only=true&uid=1552412448153"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dorian, total de productos: " + calzadoEditar.size());
+		
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosGuante("categoria-producto/tipo-de-calzado/zapatos/page/"));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("zapato");
 			zapa.setGenero("hombre");
@@ -921,6 +985,49 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosGiardini("zapatos/clasicos/?limit=12&page=", "&results_only=true&uid=1552420202445"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosGiardini("zapatos/color/?limit=12&page=", "&results_only=true&uid=1552485428536"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Giardini, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosItaloCalzados("productos/?limit=20&page=", "&results_only=true&uid=1552485767247"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Italo Calzados, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosJaquealrey("zapatos/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("zapato");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "zapato") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "zapato");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Jaquealrey, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
@@ -939,7 +1046,7 @@ public class CalzadoServiceImpl implements CalzadoService {
 		List<Ropa> calzadoGuardar = new ArrayList<Ropa>();
 		List<Ropa> calzadoEditar = new ArrayList<Ropa>();
 		
-		calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/mocasines-masculino/?page="));
+		/*calzadoEditar.addAll(scrapingService.obtenerProductosDafiti("masculino/calzado/mocasines-masculino/?page="));
 		for(Ropa zapa : calzadoEditar) {
 			zapa.setTipo("mocasin");
 			zapa.setGenero("hombre");
@@ -984,6 +1091,77 @@ public class CalzadoServiceImpl implements CalzadoService {
 			}
 		}
 		LOG.info("Finaliza busqueda en MercadoLibre, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosDorian("mocasines/?limit=16&page=", "&results_only=true&uid=1552418627412"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Dorian, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/mocasin/page/"));
+		calzadoEditar.addAll(scrapingService.obtenerProductosBorsalino("categoria-producto/hombre/nautico-hombre/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Borsalino, total de productos: " + calzadoEditar.size());*/
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosGuante("categoria-producto/tipo-de-calzado/mocasine/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Guante, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosGiardini("zapatos/nauticos/?limit=12&page=", "&results_only=true&uid=1552485502839"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Giardini, total de productos: " + calzadoEditar.size());
+		
+		calzadoEditar.addAll(scrapingService.obtenerProductosJaquealrey("nauticos/page/"));
+		for(Ropa zapa : calzadoEditar) {
+			zapa.setTipo("mocasin");
+			zapa.setGenero("hombre");
+			if(marcasRepo.findByNombreAndTipo(zapa.getMarca(), "mocasin") == null) {
+        		Marcas marcaZapa = new Marcas(zapa.getMarca(), "mocasin");
+				marcasRepo.save(marcaZapa);
+        	}
+			if(ropaRepo.findByNombreAndNombrePaginaOrigen(zapa.getNombre(), zapa.getNombrePaginaOrigen()).isEmpty()) {
+				calzadoGuardar.add(zapa);
+			}
+		}
+		LOG.info("Finaliza busqueda en Jaquealrey, total de productos: " + calzadoEditar.size());
 		
 		calzadoGuardar.sort(Comparator.comparing(Ropa::getPrecio));
 		ropaRepo.saveAll(calzadoGuardar);
