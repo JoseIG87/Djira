@@ -1523,6 +1523,81 @@ public class ScrapingServiceImpl implements ScrapingService {
         return ropaGuardar;
 	}
 	
+	@Override
+	public List<Ropa> obtenerProductosAsttonBuenosAires(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://shop.asttonbuenosaires.com/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.grid-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.span3.item-container.m-bottom-half");
+            		for (Element elem : entradas2) {
+            			Elements entradaNombreLinkPrecio = elem.select("div.item-info-container");
+    	            	String nombre = entradaNombreLinkPrecio.select("a").attr("title").toString();
+    	            	nombre = toCamelCase(nombre.toLowerCase());
+    	            	String linkHref = entradaNombreLinkPrecio.select("a").attr("href");
+    	            	Elements entradaImagen = elem.select("div.item-image-container");
+    	            	String img = entradaImagen.select("a > img").attr("data-srcset");
+    	            	img = img.split(" ")[2];
+    	            	Elements entradaPrecio = entradaNombreLinkPrecio.select("div.item-price-container.m-none-xs > span.item-price.h6");
+    	            	String precio = entradaPrecio.attr("content");
+    	            	BigDecimal precioBd = new BigDecimal(precio);
+    	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Astton Buenos Aires", null, null, null, linkHref, "asttonbuenosaires"));
+            		}
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://shop.asttonbuenosaires.com/" + path1 + contPagina.toString() + path2;
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosCzaro(String path) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://czaro.com.ar/categoria-producto/" + path + contPagina.toString();
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas = document.select("ul.products.columns-4 > li");
+            if(entradas.size() != 0){
+            	for (Element elem : entradas) {
+            		Elements entradaNombreLinkImgPrecio = elem.select("a.woocommerce-LoopProduct-link.woocommerce-loop-product__link");
+	            	String nombre = entradaNombreLinkImgPrecio.select("h2.woocommerce-loop-product__title").toString();
+	            	int indx = nombre.indexOf("\">");
+	            	nombre = nombre.substring(indx+2, nombre.length());
+	            	indx = nombre.indexOf("<");
+	            	nombre = nombre.substring(0,indx);
+	            	nombre = nombre.indexOf("#") != -1 ? nombre.substring(3,nombre.length()).trim() : nombre;
+	            	nombre = toCamelCase(nombre.toLowerCase());
+	            	String linkHref = entradaNombreLinkImgPrecio.attr("href");
+	            	Elements entradaImagen = entradaNombreLinkImgPrecio.select("img");
+	            	String img = entradaImagen.attr("src");
+	            	Elements entradaPrecio = entradaNombreLinkImgPrecio.select("span.price > span.woocommerce-Price-amount.amount");
+	            	String precio = entradaPrecio.first().toString();
+	            	indx = precio.indexOf("$");
+	            	precio = precio.substring(indx+8);
+            		int indx2 = precio.indexOf("<");
+            		precio = precio.substring(0,indx2);
+            		precio = precio.replace(".","");
+            		precio = precio.replace(",",".");
+	            	BigDecimal precioBd = new BigDecimal(precio);
+	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Czaro", null, null, null, linkHref, "czaro"));
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://czaro.com.ar/categoria-producto/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
 	/*
 	 * ***********************************
 	 *  SOLO HOMBRES
@@ -1883,6 +1958,74 @@ public class ScrapingServiceImpl implements ScrapingService {
 	}
 	
 	@Override
+	public List<Ropa> obtenerProductosPuertoBlue(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://puertoblue.mitiendanube.com/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.grid-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.span3.item-container.m-bottom-half");
+            		for (Element elem : entradas2) {
+            			Elements entradaNombreLinkPrecio = elem.select("div.item-info-container");
+    	            	String nombre = entradaNombreLinkPrecio.select("a").attr("title").toString();
+    	            	nombre = toCamelCase(nombre.toLowerCase());
+    	            	String linkHref = entradaNombreLinkPrecio.select("a").attr("href");
+    	            	Elements entradaImagen = elem.select("div.item-image-container");
+    	            	String img = entradaImagen.select("a > img").attr("data-srcset");
+    	            	img = img.split(" ")[2];
+    	            	Elements entradaPrecio = entradaNombreLinkPrecio.select("div.item-price-container.m-none-xs > span.item-price.h6");
+    	            	String precio = entradaPrecio.attr("content");
+    	            	BigDecimal precioBd = new BigDecimal(precio);
+    	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Puerto Blue", null, null, null, linkHref, "puertoblue"));
+            		}
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://puertoblue.mitiendanube.com/" + path1 + contPagina.toString() + path2;
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosPriamoitaly(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://shop.priamoitaly.com/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.grid-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.span3.item-container.m-bottom-half");
+            		for (Element elem : entradas2) {
+            			Elements entradaNombreLinkPrecio = elem.select("div.item-info-container");
+    	            	String nombre = entradaNombreLinkPrecio.select("a").attr("title").toString();
+    	            	nombre = toCamelCase(nombre.toLowerCase());
+    	            	String linkHref = entradaNombreLinkPrecio.select("a").attr("href");
+    	            	Elements entradaImagen = elem.select("div.item-image-container");
+    	            	String img = entradaImagen.select("a > img").attr("data-srcset");
+    	            	img = img.split(" ")[2];
+    	            	Elements entradaPrecio = entradaNombreLinkPrecio.select("div.item-price-container.m-none-xs > span.item-price.h6");
+    	            	String precio = entradaPrecio.attr("content");
+    	            	BigDecimal precioBd = new BigDecimal(precio);
+    	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Priamo Italy", null, null, null, linkHref, "priamoitaly"));
+            		}
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://shop.priamoitaly.com/" + path1 + contPagina.toString() + path2;
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
 	public List<Ropa> obtenerProductosItaloCalzados(String path1, String path2) throws ServiceException {
 		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
 		Integer contPagina = 1;
@@ -1949,6 +2092,42 @@ public class ScrapingServiceImpl implements ScrapingService {
             	}
 	        	contPagina++;
 	        	urlCalzado = "https://www.jaquealrey.com.ar/" + path + contPagina.toString();
+            }else{
+            	break;
+            }
+        }
+        return ropaGuardar;
+	}
+	
+	@Override
+	public List<Ropa> obtenerProductosFedericomarconcini(String path1, String path2) throws ServiceException {
+		List<Ropa> ropaGuardar = new ArrayList<Ropa>();
+		Integer contPagina = 1;
+		String urlCalzado = "https://www.federicomarconcini.com.ar/" + path1 + contPagina.toString() + path2;
+		while (getStatusConnectionCode(urlCalzado) == 200) {
+            Document document = getHtmlDocument(urlCalzado);
+            Elements entradas1 = document.select("div.product-row");
+            if(entradas1.size() != 0){
+            	for (Element elem1 : entradas1) {
+            		Elements entradas2 = elem1.select("div.product-item.dest-gral");
+            		for (Element elem : entradas2) {
+            			Elements entradaImagen = elem.select("div.head");
+    	            	Elements sinStock = entradaImagen.select("a > div.out-stock-img");
+    	            	if(sinStock.size() == 0) {
+    	            		Elements entradaNombreLinkPrecio = elem.select("div.bajada");
+        	            	String nombre = entradaNombreLinkPrecio.select("div.title > h3 > a").attr("title").toString();
+        	            	nombre = toCamelCase(nombre.toLowerCase());
+        	            	String linkHref = entradaNombreLinkPrecio.select("div.title > h3 > a").attr("href");
+    	            		String img = entradaImagen.select("a > img").attr("src");
+        	            	Elements entradaPrecio = entradaNombreLinkPrecio.select("div.price > span.price");
+        	            	String precio = entradaPrecio.attr("content");
+        	            	BigDecimal precioBd = new BigDecimal(precio);
+        	            	ropaGuardar.add(new Ropa(img, nombre, precioBd, "Federico Marconcini", null, null, null, linkHref, "federicomarconcini"));
+    	            	}
+            		}
+	            }
+	        	contPagina++;
+	        	urlCalzado = "https://www.federicomarconcini.com.ar/" + path1 + contPagina.toString() + path2;
             }else{
             	break;
             }

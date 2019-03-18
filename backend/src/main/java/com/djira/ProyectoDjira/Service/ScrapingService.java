@@ -1,6 +1,5 @@
 package com.djira.ProyectoDjira.Service;
 
-import java.text.ParseException;
 import java.util.List;
 
 import com.djira.ProyectoDjira.Domain.Ropa;
@@ -54,6 +53,12 @@ public interface ScrapingService {
 	
 	List<Ropa> obtenerProductosGiardini(String path1, String path2) throws ServiceException;
 	
+	List<Ropa> obtenerProductosPuertoBlue(String path1, String path2) throws ServiceException;
+	
+	List<Ropa> obtenerProductosPriamoitaly(String path1, String path2) throws ServiceException;
+	
+	List<Ropa> obtenerProductosFedericomarconcini(String path1, String path2) throws ServiceException;
+	
 	List<Ropa> obtenerProductosItaloCalzados(String path1, String path2) throws ServiceException;
 	
 	List<Ropa> obtenerProductosJaquealrey(String path) throws ServiceException;
@@ -66,6 +71,8 @@ public interface ScrapingService {
 	
 	List<Ropa> obtenerProductosAndez(String path) throws ServiceException;
 	
+	List<Ropa> obtenerProductosCzaro(String path) throws ServiceException;
+	
 	List<Ropa> obtenerProductosRevolutionss(String path) throws ServiceException;
 	
 	List<Ropa> obtenerProductosSporting(String path1, String path2) throws ServiceException;
@@ -77,5 +84,7 @@ public interface ScrapingService {
 	List<Ropa> obtenerProductosOggi(String path) throws ServiceException;
 	
 	List<Ropa> obtenerProductosDigitalsport(String pagina, String path) throws ServiceException;
+	
+	List<Ropa> obtenerProductosAsttonBuenosAires(String path1, String path2) throws ServiceException;
 	
 }
